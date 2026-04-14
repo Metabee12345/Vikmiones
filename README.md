@@ -1,2 +1,2 @@
 # Vikmiones
-Data and Rubric analysis of AO3 Vikmione fandom
+Data and Rubric analysis of AO3 Vikmione fandom.
