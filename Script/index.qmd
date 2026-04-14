@@ -1,0 +1,17 @@
+---
+title: "Summary Table"
+format: html
+engine: jupyter
+jupyter: python3
+execute:
+  enabled: true
+---
+
+## Dataset (Sheet: Summary)
+```{python}
+print("HELLO WORLD")
+
+import pandas as pd
+
+df = pd.read_excel("./Vikmione beoordelingdata.xlsx", sheet_name="Summary")
+df
