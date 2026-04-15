@@ -8,7 +8,16 @@ import pandas as pd
 
 INPUT_FILE = "./Vikmione beoordeling.xlsx"
 SHEET_NAME = "Summary"
-OUTPUT_FILE = "index.html"
+OUTPUT_FILE = "../Results/index.html"
+
+NAV_LINKS = [
+    ("Recommendations", "https://metabee12345.github.io/Vikmiones/"),
+    ("Results", "https://metabee12345.github.io/Vikmiones/Results/"),
+    ("Methods", "https://metabee12345.github.io/Vikmiones/Mehods/"),
+    ("Rubric", "https://metabee12345.github.io/Vikmiones/Rubric/"),
+    ("Raw Data", "https://metabee12345.github.io/Vikmiones/RawData/"),
+    ("Discussion", "https://metabee12345.github.io/Vikmiones/Discussion/"),
+]
 
 COLUMN_ORDER = [
     "Titel",
@@ -85,7 +94,18 @@ def build_html_table(df: pd.DataFrame) -> str:
     )
 
 
-def build_full_page(table_html: str, title: str = "Summary Table", vikmione_type_options: str = "", focus_options: sr = "") -> str:
+def build_navbar(current_title: str = "") -> str:
+    items = []
+
+    for label, url in NAV_LINKS:
+        active_class = ' class="active"' if label == current_title else ""
+        items.append(
+            f'<a href="{html.escape(url, quote=True)}"{active_class}>{html.escape(label)}</a>'
+        )
+
+    return '<nav class="top-nav">' + "".join(items) + "</nav>"
+
+def build_full_page(table_html: str, title: str = "Summary Table", vikmione_type_options: str = "", focus_options: sr = "", nav_current: str = "") -> str:
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,7 +143,7 @@ def build_full_page(table_html: str, title: str = "Summary Table", vikmione_type
     }}
 
     table.dataTable tbody td {{
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 300;
       font-family: "Segoe UI", Arial, sans-serif;
       color: #000000;
@@ -168,9 +188,39 @@ def build_full_page(table_html: str, title: str = "Summary Table", vikmione_type
     a:hover {{
       text-decoration: underline;
     }}
+
+    .top-nav {{
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.45rem 0;
+      margin-bottom: 1rem;
+      margin-top: -1rem;
+      border-bottom: 1px solid #d0d0d0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 900;
+    }}
+
+    .top-nav a {{
+      color: #333;
+      text-decoration: none;
+      padding: 0.15rem 0.25rem;
+    }}
+
+    .top-nav a:hover {{
+      text-decoration: underline;
+    }}
+
+    .top-nav a.active {{
+      color: #000;
+      font-weight: 700;
+    }}
   </style>
 </head>
 <body>
+  {build_navbar(nav_current)}
+
   <div class="header-bar">
   <h1>{html.escape(title)}</h1>
 
@@ -225,7 +275,7 @@ def build_full_page(table_html: str, title: str = "Summary Table", vikmione_type
         return true;
       }}
 
-      const value = (data[5] || '').toString().trim();
+      const value = (data[vikmioneTypeColIdx] || '').toString().trim();
       return selected.includes(value);
     }});
 
@@ -293,7 +343,8 @@ def main() -> None:
     page_html = build_full_page(table_html,
                                 title="Results",
                                 vikmione_type_options=vikmione_type_options,
-                                focus_options=focus_options)
+                                focus_options=focus_options,
+                                nav_current="")
 
     Path(OUTPUT_FILE).write_text(page_html, encoding="utf-8")
     print(f"Wrote {OUTPUT_FILE}")
