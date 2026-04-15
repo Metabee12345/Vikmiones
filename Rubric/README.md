@@ -7,17 +7,22 @@ The rubric’s scope is vikmione, meaning:
 * One of the main focus points in the story is the Hermione/Viktor relationship.
 * Hermione/Viktor is one of the endgame pairings.
 * The story contains meaningful narrative content (explicit scenes are not the main purpose of the text).
+
 The rubric may feel dishonest to stories not matching the above 4 criteria. This is on purpose, because such stories are outside the scope of this rubric.
 
 We aim for a rubric that is reproducible, defendable and (hopefully) discrimination-free within the intended scope. We use 3 main categories, each split into several axis, each with score 0-10:
+
 ### A) General Storytelling (Is this a good story?)
+
 * Psychological Credibility (Characters behave realistically)
 * Narrative Quality (plot content & arcs)
 * Style Quality (Writing skills & language)
 * Theme Quality (Strong message to the reader)
+
 ### B) Harry Potter Framework (Is this Harry Potter?)
 * Consistence of Characters (main canonical characters act canonical)
 * Worldbuilding (magic & environment extends canon, not contradicts it)
+
 ### C) Ship dynamics (Is this a good ship?)
 * Romance (ship dynamics are realistic)
 * Originality (ship dynamics are fresh/original & ship-specific)
@@ -39,18 +44,23 @@ We aim for a rubric that is reproducible, defendable and (hopefully) discriminat
 - Minerva McGonagall (fierce, justice, loyal, proud)
 - Severus Snape (sarcastic, willing to do everything for dumbledore & lily, psychologically unhealthy teacher)
 - Voldemort (ruthless, cruel, master manipulator, super-skilled wizard, afraid of death)
+
 Choices under pressure, Dialogues, initiatives/plans, responses, emotions? Are the characters in the story actual duplicates of their canonical counterparts, or are they different characters baring the same name?
 NB: Characters may act against their core traits (see the list above) if the circumstances & inner conflicts can make this believable. This is not penalized. But changing their core traits by rewriting the character is heavily penalized.
 NB: It is very important to state that extreme plot circumstances & strong deviations from canonical situations & themes are NOT penalized. What matters is whether the character deals with these situations (conflicts, motivations, etc) in the same way as the canonical character would, in agreement with the above personality traits (or against it, if worked out properly and defendable).
 Hence, causal reasoning is critical. Do not just compare deviations from traits, actions & outcomes, but consider if these originate logically from the circumstances and a canonical character or not. Logic and causality are key here, to whether something is penalized or not. Are darker actions due to: World/plot/tone. Or Character personality change. Only the latter is penalized. Do the circumstances push hard enough to break the canon traits believably yes/no, is key here. Canon-consistent extreme behaviour is perfectly possible, if it follows logically from the alternate circumstances. But the further you push it, the further the extrapolation goes, and then, one simply must acknowledge that this comes with a large uncertainty margin around the extrapolation. Which means some (small) penalty could be justified.
+
 **Motivation:** The story should be an actual Harry Potter fanfiction, meaning that the characters should feel the same as their canonical counterparts.
+
 **Descriptors:** Score the category on a scale of 0-10, with an integer number.
 - 10: Under the alternate circumstances of the story, each character of the above list talks/responds fully believable as their canonical counterparts would, makes the same decisions as their canonical counterparts would, has the same skills & flaws, etc. NB: all with respect to the different circumstances; Changes caused by different circumstances are not penalized.
 - 8: At least one of the characters has some notable deviations with respect to their canonical counterparts. The deviations are notable in choices made, dialogues, etc, but correcting the deviations has little to no impact on the plot. Errors are sloppy, but they can be fixed without changing the story.
 - 5: At least one of the characters behaves significantly different from its canonical counterpart concerning decisions, dialogues, etc. and fixing it would have significant impact on the plot (the error is bigger than just sloppiness in execution). Significant impact means the main plot cannot believably stay as it is when the issue is fixed.
 - 3: Multiple characters behave significantly different for their canonical counterparts and some of these differences have significant plot-impact.
 - 0: All characters from the list behave significantly different from their canonical counterparts.
+
 NB: If many characters behave just a little OOC, the score is much higher than if a single character behaves significantly OOC. Also, IC/OOC impact on plot is punished heavily. So many small sloppy errors in dialogues spread across many characters can still score 7-9 (depending on severity) as long as the characters still feel like their canonical counterparts, but one character making a single crucial decision against their canonical counterpart makes the score immediately drop to 4-5 (or lower, depending on severity).
+
 **Hard boundary:** If the story intentionally implements major rewrites of even one of the listed canonical characters, this is hard-cut by assigning score 0. For example, Harry is consistently sadistic or power-hungry through the entire story. Hermione is consistently opportunistic instead of defending justice, etc. The so-called dark-Harry or dark-Hermione tropes (same for the other listed characters). Note that the boundary is subtle. Harry can be Slytherin because he forgot to ask the hat for Gryffindor and still be canon-Harry. Or join Death eaters for saving/protecting his friends. If executed correctly, this can still score 10. But Harry being Slytherin or joining death eaters because he is hungry for power is a hard 0. The difference between an intrinsic major character rewrite (penalized with 0 points) and a believable stress-test for the canonical character (depending on the executing this could be 10 points).
 Again: causal reasoning is critical. Do not just compare deviations from traits, actions & outcomes, but consider if these originate logically from the circumstances and a canonical character or not. Logic and causality are key here, to whether something is penalized or not. Are darker actions due to: World/plot/tone. Or Character personality change. Only he latter is penalized. Do the circumstances push hard enough to break the canon traits believably yes/no, is key here.
 NB: the contradiction/rewrite must be clear, persistent, and structural, not a one-off line, temporary deception, or local interpretation to trigger the hard-boundary.
@@ -69,9 +79,13 @@ NB: use only the narrative body text. Do NOT use or infer information from: Tags
 - Is emotional development gradual and believable?
 - Can the reader properly feel doubts and uncertainties.
 - Can the reader feel/understand the emotions of the main characters?
+
 Irrational or flawed behaviour is not penalized if it is clearly motivated and consistent with the character’s psychology. This is to differentiate between author’s intent (OK) and author’s error (penalty).
+
 **Motivation:** General characteristic of good writing. Characters should be well rounded and make sense.
+
 **Descriptors:** Score the category on a scale of 0-10, with an integer number.
+
 - 10: clear and undisputable yes across the story on each question (see details) for each of the main characters (main character = not necessarily on the list; a main character can even be an OC. Main character means a character with significant screentime. Does not necessarily have to have a POV).
 - 8: mostly yes on all questions for all main characters. Situations leading to a no do not have significant impact on the plot of the story.
 - 5: There is at least a single no to the questions on a point in the story where it has significant impact on the plot, meaning that psychological believability is seriously sacrificed to serve the plot at least once. Significant impact means the main plot cannot believably stay as it is when the issue is fixed.
@@ -260,15 +274,20 @@ NB: A dynamic that is emotionally strong and believable but would still work lar
 **Name:** Integration
 **Main Issue:** How does the story connect plot, main romance and worldbuilding? Are they separate? Exist plot & romance side-by-side with respect to a magical décor? Or do relationship dynamics, plot & worldbuilding form a structural interdependent system where a change in one of them leads to (massive) responses in the others?
 **Details:** Note that this category is very different from anything we had before. Worldbuilding measures the intrinsic quality of the aspect. Romance and Originality measure the intrinsic ship quality. Narrative Quality measures the intrinsic plot quality. But each of these 3 aspects things can score very high on its own intrinsic quality while having little to do with each other and, therefore, the story scores low on integration. On the other hand, a story can also have a simple ship, worldbuilding and plot while the 3 aspects do continuously interact. So, here we focus on the following questions:
+
 - Is worldbuilding incorporated in the relationship dynamics? Does the main relationship (strongly) respond to changes in environment and the possibility of utilizing new magic? Does this lead to new challenges, conflicts or resolutions/pay-offs in the relationship?
 - Does the relationship dynamic drive changes in worldbuilding? Exploration of new environments and/or magic? Does the relationship dynamic lead to engaging interaction with the environment and existing magic?
 - Does the plot induce frequent and/or structurally significant and/or specific conflicts, challenges or resolution/pay-off in the primary relationship? Dynamics that would not have emerged from a different plot? Is causality respected and utilized to its full potential?
 - Does the relationship dynamic drive (major) plot decisions? Would a change in the relationship dynamic have led to different outcomes on crucial moments in the plot? Again: is causality respected and utilized to its full potential?
 - Does the plot respond to the worldbuilding? Are decisions and outcomes on crucial moments logically generated from existing environments and available magic? Tools and locations should not be underused in the plot (why not just use this tool/spell or that location?) or provide cheap shortcuts in the plot (deus ex machina). Available tools, environments, and magic should be logically utilized; obvious unused solutions or unjustified shortcuts indicate weak integration.
 - Does the worldbuilding respond to the plot? Is magic and environment only discussed just because it has to be (bad), or is it discussed and provided when it is relevant for the plot (good)? Do plot outcomes drive to the exploration of environments and magic?
+
 Picture worldbuilding (both magic system and environment), relationship dynamics (of the primary ship in the story) and the main plot on a triangle. Between the points you can connect 6 lines of causality how a change in one aspect can lead to changes in the others. And the more the three aspects actually talk to each other and respond to each other and vice/versa, the better. Integration is weak if any of the three elements (plot, relationship, worldbuilding) can be removed or altered without significantly affecting the others.
+
 **Motivation:** Each relationship comes with its own main challenge/narrative engine. For example (the list is non-exhausting): Harry/Hermione: how do you make room for the ship (Ron & Ginny)? Ron/Hermione: Can they accept each other for who they are? Snape/Hermione: how do you deal with power/age imbalances and toxicity? Draco/Hermione: Can Draco change and Hermione forgive? Viktor/Hermione: we know that they like each other. So, what happens with their relationship? This axis is meant to specifically assess how well the main challenge of the ship is addressed in the story. It is, and has to be, vikmione-specific. But it has to be discrimination-free. So, we cannot, for example, state that Viktor should join the horcrux hunt, or that the hunt even has to be discussed. Maybe the story has a setting where this is not relevant. The important part is: if there is a horcrux hunt and Hermione is together with Viktor, what does that mean for the ship. Hence, for vikmione integration is the correct abstraction for measuring how well the main challenge of the relationship is handled.
+
 **Descriptors:** Score the category on a scale of 0-10, with an integer number.
+
 - 10: A clear and consistent yes across the full story on each question (see details). On all 6 interaction aspects changes in one lead to changes in the other. Causality is always fully respected and fully believable. Interactions and integration are never bend for convenience and/or to serve the plot. The whole story feels like relationship plot and worldbuilding were designed as a single integrated system from the start.
 - 8: Mostly yes to each question (see details). On all 6 interaction aspects, changes in one lead to changes in the other. Causality is mostly respected, but on few occasions the interactions and integration between worldbuilding, relationship and plot are bended a bit to serve the plot. The bending does not lead to major escapes (deus ex machina) but is noticeable but without altering major outcomes or creating inconsistencies. The story feels like worldbuilding, relationship and plot were attempted as an integrated system, but not every challenge that came with this premise could be solved.
 - 5: Proper interactions (see the questions from details) are present, but they feel cheap and shallow. Causality is not respected and it feels like interactions and integrations are superimposed on an existing plot, ship and worldbuilding. Plot, ship and worldbuilding feel like they were designed separately, and connected afterwards.
@@ -311,6 +330,7 @@ As such, the rubric score will do exactly what it needs to do: it is defendable,
 * Stories that rewrite core Harry Potter characters and/or contradict canonical worldbuilding are heavily punished in B. We constrain the Harry Potter fanfic world as not directly contradicting canon in environment, magic rules of core character traits.  Plot divergences are fine.
 * Stories that do not take the (vikmione) ship seriously are heavily punished in C.
 * Overengineered stories are punished by dropping D, strongly affecting the total for strict judges.
+
 As such, the combination of total score & drift rewards intrinsic quality, reproducible, defendable and discrimination-free and dismantles stories outside the scope and/or trade-offs.
 
 Unless the specific purpose requires otherwise, we recommend using alpha=0.5 (this is what we used).
@@ -329,4 +349,5 @@ NB: 100% discrimination-free never exists. The rubric does favour, for example:
 * Clear theme transfer
 * No HP canon contradictions
 * Vikmione-specific integration matters
+
 These are all defensible choices. But they are normative design choices. We have to admit that. We aim for 100% discrimination-free but this is a utopia. We attempted to approximate it as much as possible, but only within the intended scope.
