@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rubric</title>
+
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 1.5rem;
+      color: #000;
+      line-height: 1.55;
+      max-width: 1100px;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      border-bottom: 1px solid #e5e5e5;
+      padding-bottom: 0.25rem;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    h1:first-of-type {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    p, ul, ol {
+      font-size: 16px;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      background: #f5f5f5;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: #f5f5f5;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 6px;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #f7f7f7;
+    }
+
+    blockquote {
+      margin-left: 0;
+      padding-left: 1rem;
+      border-left: 4px solid #ddd;
+      color: #444;
+    }
+
+    details {
+      margin-bottom: 0.75rem;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 0.2rem 0;
+    }
+
+    summary:hover {
+      text-decoration: underline;
+    }
+
+    summary::marker {
+      font-size: 0.9em;
+    }
+
+    details details {
+      margin-left: 1rem;
+    }
+
+    details summary {
+      cursor: pointer;
+      padding: 0.2rem 0;
+    }
+
+    details summary:hover {
+      text-decoration: underline;
+    }
+
+    /* klikbare # headings */
+    #page-content > details > summary {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    /* klikbare ## headings */
+    #page-content > details > div > details > summary,
+    #page-content details details > summary {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.2rem 0;
+      margin-bottom: 1rem;
+      margin-top: -0.95rem;
+      border-bottom: 1px solid #d0d0d0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .top-nav a {
+      color: #333;
+      text-decoration: none;
+      padding: 0.15rem 0.25rem;
+    }
+
+    .top-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .top-nav a.active {
+      color: #000;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav"><a href="https://metabee12345.github.io/Vikmiones/">Recommendations</a><a href="https://metabee12345.github.io/Vikmiones/Results/">Results</a><a href="https://metabee12345.github.io/Vikmiones/Methods/">Methods</a><a href="https://metabee12345.github.io/Vikmiones/Rubric/" class="active">Rubric</a><a href="https://metabee12345.github.io/Vikmiones/RawData/">Raw Data</a><a href="https://metabee12345.github.io/Vikmiones/Discussion/">Discussion</a></nav>
+  <div id="page-content">
+    <h1 id="analysis-methods">Analysis Methods</h1>
+<p>Here we describe our full analysis procedure.</p>
+<h1 id="dataset-selection">Dataset selection</h1>
+<p>The following procedure was used to determine which vikmione stories were analysed.</p>
+<h1 id="evaluation-pipeline">Evaluation Pipeline</h1>
+<p>To apply the rubric to the Vikmione stories, the following procedure was used:</p>
+<ul>
+<li>Choose a standard AI-tool and LLM for the evaluation (We used ChatGPT with GPT-5.3)</li>
+<li>Choose a standard document format for all stories, to counteract AI sensitivity to document format. For example: the AO3 PDF export.</li>
+<li>Switch off memory functions and cross-chat functions</li>
+<li>Open a fresh empty chat</li>
+<li>Load a <strong>single</strong> rubric axis into the first prompt; Terminate the response a.s.a.p.</li>
+<li>Into the second prompt, load as many PDF documents as fit.</li>
+<li>Add the following prompt text:</li>
+</ul>
+<p><em>Score all supplied PDFs against the above evaluation model. Briefly argue each score using the source material. Rely solely on the descriptors for calibration of the scoring scale. Do not compare between the stories at all. We want independent and non-relative scores. NB: use only the narrative body text. Do NOT use or infer information from: Tags, Author Notes, Summary, Chapter Titles, or other metadata of any kind. If such elements are present in the text, ignore them entirely.</em></p>
+<ul>
+<li>Repeat the process for all stories under consideration, and for all 10 rubric axis. NB: <strong>Use new chats every time, at least when switching rubric axis!</strong></li>
+<li>Manually combine the results into the total.</li>
+<li>The first outcome of the LLM is final, do not supply any additional questions/context to steer the evaluation, as these biases the scoring between stories.</li>
+</ul>
+<p><strong>Irregularities:</strong></p>
+<ul>
+<li>In the case of canon-consistency, AI/LLM evaluation tends to structurally underscore this axis, due to a lack of causal reasoning power. LLM’s tend to map how much a character’s actions match their canonical outcomes, but this is the wrong approach. The axis clearly states: how likely it is that the canonical version of the character makes the same decision given the new circumstances. Even though the axis text clearly states this, an LLM is not very capable of picking this up, so a second step is needed to correct for this bias. For example, one could add the following prompt:</li>
+</ul>
+<p><em>NB: Do not take into account whether plot circumstances look like canon, or are extreme. What matters is, would the characters act the same as their canonical counterparts do, under those new (and possible more extreme) circumstances. Use causal reasoning. We are solely interested in the characters, do not weight the circumstances. Rescore all documents. Note that this is a less strict rule then what you previously applied.</em></p>
+<p>But note that this is no guarantee. One still must carefully read the justifications and scores and then determine whether this sounds reasonable. As such, Canon-Consistency is simple less reproducible with LLMs then the other axes.</p>
+<ul>
+<li>Theme Quality measures reader impression, which simple fluctuates a bit more then the other axes in its evaluation. But the pipeline can be used. There is simple more fluctuation, not a systematic bias, as is the case with canon Consistency.</li>
+</ul>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const content = document.getElementById("page-content");
+
+  function wrapSections(tagName) {
+    const headings = Array.from(content.querySelectorAll(tagName));
+
+    headings.forEach((h, index) => {
+      // keep the very first h1 non-collapsible
+      if (tagName === "h1" && index === 0) return;
+
+      // skip if already inside a summary/details structure
+      if (h.closest("summary")) return;
+
+      const details = document.createElement("details");
+      details.open = false;
+
+      const summary = document.createElement("summary");
+      summary.innerHTML = h.innerHTML;
+
+      details.appendChild(summary);
+
+      let next = h.nextSibling;
+
+      while (next && !(next.tagName && next.tagName.match(/^H[1-6]$/))) {
+        const temp = next.nextSibling;
+        details.appendChild(next);
+        next = temp;
+      }
+
+      h.replaceWith(details);
+    });
+  }
+
+  // wrap h2 first, then h1
+  wrapSections("h2");
+  wrapSections("h1");
+});
+</script>
+</body>
+</html>
