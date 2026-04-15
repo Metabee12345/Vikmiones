@@ -13,7 +13,7 @@ OUTPUT_FILE = "../RawData/index.html"
 NAV_LINKS = [
     ("Recommendations", "https://metabee12345.github.io/Vikmiones/"),
     ("Results", "https://metabee12345.github.io/Vikmiones/Results/"),
-    ("Methods", "https://metabee12345.github.io/Vikmiones/Mehods/"),
+    ("Methods", "https://metabee12345.github.io/Vikmiones/Methods/"),
     ("Rubric", "https://metabee12345.github.io/Vikmiones/Rubric/"),
     ("Raw Data", "https://metabee12345.github.io/Vikmiones/RawData/"),
     ("Discussion", "https://metabee12345.github.io/Vikmiones/Discussion/"),
