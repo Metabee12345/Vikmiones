@@ -1,0 +1,2479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raw Rubric &amp; Meta Data</title>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1.5rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table.dataTable {
+      width: 100% !important;
+      font-size: 12px;
+    }
+
+    table.dataTable thead th {
+      font-size: 16px;
+      font-weight: 600;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #000000;
+      white-space: nowrap;
+    }
+
+    table.dataTable tbody td {
+      font-size: 13px;
+      font-weight: 300;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #000000;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .header-bar h1 {
+      margin: 0;
+    }
+
+    .filters {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .filters > div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .filters select {
+      min-width: 200px;
+      height: 5.5em;
+      font-size: 13px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.45rem 0;
+      margin-bottom: 1rem;
+      margin-top: -1rem;
+      border-bottom: 1px solid #d0d0d0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .top-nav a {
+      color: #333;
+      text-decoration: none;
+      padding: 0.15rem 0.25rem;
+    }
+
+    .top-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .top-nav a.active {
+      color: #000;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav"><a href="https://metabee12345.github.io/Vikmiones/">Recommendations</a><a href="https://metabee12345.github.io/Vikmiones/Results/">Results</a><a href="https://metabee12345.github.io/Vikmiones/Mehods/">Methods</a><a href="https://metabee12345.github.io/Vikmiones/Rubric/">Rubric</a><a href="https://metabee12345.github.io/Vikmiones/RawData/">Raw Data</a><a href="https://metabee12345.github.io/Vikmiones/Discussion/">Discussion</a></nav>
+
+  <div class="header-bar">
+  <h1>Raw Rubric &amp; Meta Data</h1>
+
+    <div class="filters">
+      <label>Vikmione Type:</label>
+      <select id="vikmione-type-filter" multiple>
+        <option value="__ALL__">All</option>
+<option value="Alternate Reality">Alternate Reality</option>
+<option value="Canon-div">Canon-div</option>
+<option value="Intermezzo">Intermezzo</option>
+<option value="Postwar">Postwar</option>
+      </select>
+
+      <label>Focus:</label>
+      <select id="focus-filter" multiple>
+        <option value="__ALL__">All</option>
+<option value="Plot">Plot</option>
+<option value="Romance">Romance</option>
+      </select>
+    </div>
+  </div>
+
+  <table class="dataframe display nowrap compact" id="ficTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Titel</th>
+      <th>Canon</th>
+      <th>Psychology</th>
+      <th>Romance</th>
+      <th>Narrative</th>
+      <th>Style</th>
+      <th>Theme</th>
+      <th>Worldbuild</th>
+      <th>Viktor</th>
+      <th>Original</th>
+      <th>Integration</th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+      <th>F</th>
+      <th>Analysis</th>
+      <th>Total</th>
+      <th>Drift</th>
+      <th>Canon2</th>
+      <th>Psychology2</th>
+      <th>Romance2</th>
+      <th>Narrative2</th>
+      <th>Style2</th>
+      <th>Theme2</th>
+      <th>Worldbuild2</th>
+      <th>Viktor2</th>
+      <th>Original2</th>
+      <th>Integration2</th>
+      <th>A2</th>
+      <th>B2</th>
+      <th>C2</th>
+      <th>D2</th>
+      <th>E2</th>
+      <th>F2</th>
+      <th>Analysis2</th>
+      <th>Total2</th>
+      <th>Drift2</th>
+      <th>Label</th>
+      <th>Aavg</th>
+      <th>Bavg</th>
+      <th>Cavg</th>
+      <th>Davg</th>
+      <th>T</th>
+      <th>Delta</th>
+      <th>Wordcount(k)</th>
+      <th>Hits</th>
+      <th>Kudos</th>
+      <th>Comments</th>
+      <th>Startdate6</th>
+      <th>Status</th>
+      <th>Type</th>
+      <th>Measurement Point</th>
+      <th>Time Delta</th>
+      <th>Hits/Time</th>
+      <th>Kudos/Hits</th>
+      <th>Comments/Hits</th>
+      <th>Correction</th>
+      <th>Clickability score</th>
+      <th>Outliers</th>
+      <th>Public Score</th>
+      <th>Focus</th>
+      <th>Plot Summary</th>
+      <th>War solution</th>
+      <th>Strongest Point</th>
+      <th>Weakest Point</th>
+      <th>Vikmione Type</th>
+      <th>Type Justification</th>
+      <th>Author</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alignment</td>
+      <td>8</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>8.5</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>10.0</td>
+      <td>10.0</td>
+      <td>10.0</td>
+      <td>10.0</td>
+      <td>9.125</td>
+      <td>9.0</td>
+      <td>9.5</td>
+      <td>8.5</td>
+      <td>9.0</td>
+      <td>9.6</td>
+      <td>8.5</td>
+      <td>88.5</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.5</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>10.0</td>
+      <td>10.0</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>8.625</td>
+      <td>9.0</td>
+      <td>9.25</td>
+      <td>8.5</td>
+      <td>8.3</td>
+      <td>9.4</td>
+      <td>4.3</td>
+      <td>87.3</td>
+      <td>5.0</td>
+      <td>Vikmione</td>
+      <td>8.875</td>
+      <td>9.0</td>
+      <td>9.375</td>
+      <td>8.5</td>
+      <td>87.9</td>
+      <td>6.0</td>
+      <td>360.0</td>
+      <td>9138.0</td>
+      <td>106.0</td>
+      <td>281.0</td>
+      <td>2025-11-03</td>
+      <td>Complete</td>
+      <td>canon-divergence</td>
+      <td>2026-04-09</td>
+      <td>157.0</td>
+      <td>58.2</td>
+      <td>1.2</td>
+      <td>3.1</td>
+      <td>0.74</td>
+      <td>68.0</td>
+      <td>Mainstream</td>
+      <td>43.068</td>
+      <td>Plot</td>
+      <td>Viktor actively joins Hermione in a ruthless, strategic Horcrux hunt, reshaping the outcome of the war.</td>
+      <td>Viktor directly joins the Horcrux hunt and significantly alters the war outcome.</td>
+      <td>Deep moral complexity and war strategy.</td>
+      <td>Complexity can be overwhelming</td>
+      <td>Canon-div</td>
+      <td>The author explicitly says canon is followed through year 5 and that the AU depends on Hermione and Viktor becoming/staying serious from that earlier canon connection; it is still fundamentally a “what changes if Vikmione continues?” fic.</td>
+      <td>FastNeutrons</td>
+      <td><a href="https://archiveofourown.org/works/73628601" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/73628601</a></td>
+    </tr>
+    <tr>
+      <td>All the Names of Waiting</td>
+      <td>9</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.5</td>
+      <td>8.5</td>
+      <td>8.75</td>
+      <td>8.5</td>
+      <td>8.7</td>
+      <td>8.5</td>
+      <td>0.4</td>
+      <td>85.4</td>
+      <td>1.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>8.5</td>
+      <td>8.5</td>
+      <td>8.75</td>
+      <td>8.5</td>
+      <td>8.7</td>
+      <td>8.3</td>
+      <td>2.4</td>
+      <td>85.4</td>
+      <td>1.0</td>
+      <td>Vikmione</td>
+      <td>8.5</td>
+      <td>8.5</td>
+      <td>8.75</td>
+      <td>8.5</td>
+      <td>85.4</td>
+      <td>1.0</td>
+      <td>93.0</td>
+      <td>3156.0</td>
+      <td>95.0</td>
+      <td>265.0</td>
+      <td>2025-09-15</td>
+      <td>WIP</td>
+      <td>post-war</td>
+      <td>2026-04-09</td>
+      <td>206.0</td>
+      <td>15.3</td>
+      <td>3.0</td>
+      <td>8.4</td>
+      <td>0.78</td>
+      <td>70.0</td>
+      <td>Hidden Gem; Author explicitely stated that many people repell on the divorcee-part of krummione, holding back hits while the work is extremely well-done.</td>
+      <td>11.934</td>
+      <td>Romance</td>
+      <td>Starts with Hermione and Viktor dating in GoF. They break up, but years after the war, Hermione and Viktor reconnect, dealing with emotional baggage and political change.</td>
+      <td>Viktor waits during the war; the conflict is emotional aftermath rather than combat.</td>
+      <td>Mature exploration of healing and second chances. Stellar Characterizations.</td>
+      <td>Slower pacing and less immediate plot tension.</td>
+      <td>Postwar</td>
+      <td>The relationship resumes twelve years later, with war damage and emotional aftermath clearly structuring the story.</td>
+      <td>MayimOr</td>
+      <td><a href="https://archiveofourown.org/works/70894036" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/70894036</a></td>
+    </tr>
+    <tr>
+      <td>Debts of Honor</td>
+      <td>9</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.75</td>
+      <td>8.5</td>
+      <td>8.5</td>
+      <td>8.5</td>
+      <td>9.0</td>
+      <td>8.5</td>
+      <td>0.4</td>
+      <td>85.4</td>
+      <td>1.0</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.75</td>
+      <td>8.5</td>
+      <td>8.5</td>
+      <td>8.0</td>
+      <td>8.7</td>
+      <td>8.8</td>
+      <td>-2.1</td>
+      <td>82.9</td>
+      <td>6.0</td>
+      <td>Vikmione</td>
+      <td>8.75</td>
+      <td>8.5</td>
+      <td>8.5</td>
+      <td>8.25</td>
+      <td>84.2</td>
+      <td>3.0</td>
+      <td>551.0</td>
+      <td>118644.0</td>
+      <td>1558.0</td>
+      <td>2531.0</td>
+      <td>2020-03-13</td>
+      <td>WIP</td>
+      <td>post-war</td>
+      <td>2026-04-09</td>
+      <td>2218.0</td>
+      <td>53.5</td>
+      <td>1.3</td>
+      <td>2.1</td>
+      <td>1.0</td>
+      <td>66.0</td>
+      <td>Mainstream</td>
+      <td>53.5</td>
+      <td>Plot</td>
+      <td>Explores the consequences of Hermione’s post-war decisions, with political and personal ramifications.</td>
+      <td>Viktor supports from afar and later engages in rebuilding.</td>
+      <td>Rich worldbuilding and long-term consequences.</td>
+      <td>Length and complexity may dilute focus.</td>
+      <td>Postwar</td>
+      <td>It starts after the war, and both the letters and the story frame are built around injury, aftermath, rebuilding, and healing.</td>
+      <td>sareliz</td>
+      <td><a href="http://archiveofourown.org/works/23132749" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/23132749</a></td>
+    </tr>
+    <tr>
+      <td>Air</td>
+      <td>10</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>8.5</td>
+      <td>9.0</td>
+      <td>6.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.125</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>7.5</td>
+      <td>9.0</td>
+      <td>8.4</td>
+      <td>-3.0</td>
+      <td>81.0</td>
+      <td>12.0</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>8.5</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.375</td>
+      <td>9.5</td>
+      <td>8.5</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>8.4</td>
+      <td>0.0</td>
+      <td>84.0</td>
+      <td>8.0</td>
+      <td>Vikmione</td>
+      <td>8.25</td>
+      <td>9.75</td>
+      <td>8.25</td>
+      <td>7.75</td>
+      <td>82.5</td>
+      <td>10.0</td>
+      <td>253.0</td>
+      <td>95681.0</td>
+      <td>2009.0</td>
+      <td>947.0</td>
+      <td>2019-05-09</td>
+      <td>WIP</td>
+      <td>canon-divergence</td>
+      <td>2026-04-09</td>
+      <td>2527.0</td>
+      <td>37.9</td>
+      <td>2.1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>76.0</td>
+      <td>Mainstream</td>
+      <td>37.9</td>
+      <td>Romance</td>
+      <td>Relationship develops from the Triwizard Tournament onward, expanding canon interactions.</td>
+      <td>Viktor remains external to core war effort, as the story is WIP and stops after Ootp.</td>
+      <td>Strong emotional progression across canon timeline.</td>
+      <td>Less focus on the wider plot consequences.</td>
+      <td>Canon-div</td>
+      <td>It is explicitly “Triwizard Tournament, and beyond,” so it reads as a GoF-based continuation rather than a disconnected AU premise.</td>
+      <td>Calebski</td>
+      <td><a href="http://archiveofourown.org/works/18766738" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/18766738</a></td>
+    </tr>
+    <tr>
+      <td>No more Trio</td>
+      <td>7</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>7.5</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>10.0</td>
+      <td>8.125</td>
+      <td>7.5</td>
+      <td>8.75</td>
+      <td>7.5</td>
+      <td>8.0</td>
+      <td>8.6</td>
+      <td>8.1</td>
+      <td>78.1</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>7.5</td>
+      <td>8.5</td>
+      <td>7.5</td>
+      <td>7.7</td>
+      <td>8.5</td>
+      <td>2.5</td>
+      <td>77.5</td>
+      <td>5.0</td>
+      <td>Vikmione</td>
+      <td>8.0625</td>
+      <td>7.5</td>
+      <td>8.625</td>
+      <td>7.5</td>
+      <td>77.8</td>
+      <td>6.0</td>
+      <td>179.0</td>
+      <td>6016.0</td>
+      <td>86.0</td>
+      <td>332.0</td>
+      <td>2025-11-12</td>
+      <td>Complete</td>
+      <td>canon-divergence</td>
+      <td>2026-04-09</td>
+      <td>148.0</td>
+      <td>40.6</td>
+      <td>1.4</td>
+      <td>5.5</td>
+      <td>0.65</td>
+      <td>64.0</td>
+      <td>Mainstream</td>
+      <td>26.39</td>
+      <td>Plot</td>
+      <td>AU where Hermione leaves Hogwarts for Viktor in Bulgaria and Dumbledore has to find an alternative for letting the trio search for horcruxes.</td>
+      <td>Viktor takes Hermione with him to Bulgaria, preventing her from ever having to fight the war.</td>
+      <td>Deep ethical dilemmas and character study.</td>
+      <td>Extremely large scope.</td>
+      <td>Canon-div</td>
+      <td>It is a branch from Alignment and explicitly defined by Hermione and Viktor staying together after the Triwizard connection; the story’s whole question is what that does to canon relationships and the war.</td>
+      <td>FastNeutrons</td>
+      <td><a href="https://archiveofourown.org/works/74098666" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/74098666</a></td>
+    </tr>
+    <tr>
+      <td>Hunting Shadows</td>
+      <td>10</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>7.75</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>7.5</td>
+      <td>8.0</td>
+      <td>7.8</td>
+      <td>0.8</td>
+      <td>78.8</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>7.25</td>
+      <td>8.5</td>
+      <td>8.0</td>
+      <td>6.5</td>
+      <td>8.0</td>
+      <td>7.8</td>
+      <td>-5.9</td>
+      <td>72.1</td>
+      <td>14.0</td>
+      <td>Vikmione</td>
+      <td>7.5</td>
+      <td>8.75</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>75.4</td>
+      <td>11.0</td>
+      <td>184.0</td>
+      <td>73529.0</td>
+      <td>1620.0</td>
+      <td>1108.0</td>
+      <td>2020-04-03</td>
+      <td>Complete</td>
+      <td>Intermezzo</td>
+      <td>2026-04-09</td>
+      <td>2197.0</td>
+      <td>33.5</td>
+      <td>2.2</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>77.0</td>
+      <td>Mainstream</td>
+      <td>33.5</td>
+      <td>Romance</td>
+      <td>Hermione trains in Bulgaria and grows closer to Viktor between PoS and GoF.</td>
+      <td>The war is not yet central; The story is pre-war development.</td>
+      <td>Strong slow-burn relationship integrated with a good plot.</td>
+      <td>The story has a limited impact on main HP events.</td>
+      <td>Intermezzo</td>
+      <td>It starts just before GoF, in Bulgaria, and is explicitly tagged as pre–Quidditch World Cup / canon divergence tied to the GoF period.</td>
+      <td>TangentiaLives</td>
+      <td><a href="http://archiveofourown.org/works/23468659" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/23468659</a></td>
+    </tr>
+    <tr>
+      <td>The Observer Effect</td>
+      <td>9</td>
+      <td>9.0</td>
+      <td>6.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.75</td>
+      <td>9.5</td>
+      <td>7.5</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.5</td>
+      <td>-2.1</td>
+      <td>77.9</td>
+      <td>16.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>6.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>5.0</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>6.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>9.5</td>
+      <td>7.75</td>
+      <td>5.5</td>
+      <td>8.0</td>
+      <td>8.8</td>
+      <td>-10.4</td>
+      <td>69.6</td>
+      <td>29.0</td>
+      <td>Vikmione</td>
+      <td>8.375</td>
+      <td>9.5</td>
+      <td>7.625</td>
+      <td>6.25</td>
+      <td>73.8</td>
+      <td>23.0</td>
+      <td>151.0</td>
+      <td>12725.0</td>
+      <td>239.0</td>
+      <td>597.0</td>
+      <td>2021-08-20</td>
+      <td>Complete</td>
+      <td>post-war</td>
+      <td>2026-04-09</td>
+      <td>1693.0</td>
+      <td>7.5</td>
+      <td>1.9</td>
+      <td>4.7</td>
+      <td>0.98</td>
+      <td>69.0</td>
+      <td>Mainstream</td>
+      <td>7.35</td>
+      <td>Plot</td>
+      <td>A decade after Voldemort’s fall, Auror Viktor investigates terrorism and international magical crime in a fragile postwar world while Hermione’s research becomes entangled with the case.</td>
+      <td>Viktor’s war role is displaced into postwar defense: instead of Horcrux-hunt participation, he fights the instability, radicalization, and violence that survived Voldemort.</td>
+      <td>The best element is the political-thriller / detective structure with strong wizarding-world after-the-war worldbuilding.</td>
+      <td>The weakest element is that the fic’s core energy often sits more in casework and politics than in the romance itself.</td>
+      <td>Postwar</td>
+      <td>This is a decade-later fic, but the summary makes clear that the instability of the postwar wizarding world is the engine of the plot. That keeps it in postwar rather than generic alternate reality.</td>
+      <td>tereyaglikedi</td>
+      <td><a href="https://archiveofourown.org/works/32711164" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/32711164</a></td>
+    </tr>
+    <tr>
+      <td>A Year Abroad</td>
+      <td>10</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>7.5</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>7.125</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>7.5</td>
+      <td>7.3</td>
+      <td>6.9</td>
+      <td>4.5</td>
+      <td>73.5</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>7.75</td>
+      <td>7.0</td>
+      <td>7.7</td>
+      <td>7.3</td>
+      <td>-0.1</td>
+      <td>72.9</td>
+      <td>6.0</td>
+      <td>Vikmione</td>
+      <td>7.0625</td>
+      <td>8.5</td>
+      <td>7.375</td>
+      <td>7.25</td>
+      <td>73.5</td>
+      <td>6.0</td>
+      <td>146.0</td>
+      <td>34697.0</td>
+      <td>846.0</td>
+      <td>237.0</td>
+      <td>2016-09-01</td>
+      <td>Complete</td>
+      <td>alternate reality</td>
+      <td>2026-04-09</td>
+      <td>3507.0</td>
+      <td>9.9</td>
+      <td>2.4</td>
+      <td>0.7</td>
+      <td>1.0</td>
+      <td>72.0</td>
+      <td>Mainstream</td>
+      <td>9.9</td>
+      <td>Romance</td>
+      <td>Hermione is sent to Durmstrang in a student exchange and builds a relationship with Viktor in a foreign setting. The horcruxes are already destroyed before Hermione leaves to Durmstrang.</td>
+      <td>War is background; not central to plot.</td>
+      <td>Strong cultural/worldbuilding and relationship growth.</td>
+      <td>War stakes feel distant and less impactful.</td>
+      <td>Alternate Reality</td>
+      <td>Hermione is sent to Durmstrang in a postwar educational exchange; the exchange setting is the main premise rather than a prelude into familiar GoF canon.</td>
+      <td>paigevlindsay</td>
+      <td><a href="https://archiveofourown.org/works/7933567" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/7933567</a></td>
+    </tr>
+    <tr>
+      <td>Until Tomorrow</td>
+      <td>10</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.5</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>7.875</td>
+      <td>7.5</td>
+      <td>7.0</td>
+      <td>7.5</td>
+      <td>8.3</td>
+      <td>6.6</td>
+      <td>6.3</td>
+      <td>72.3</td>
+      <td>5.0</td>
+      <td>10.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>7.25</td>
+      <td>9.0</td>
+      <td>7.25</td>
+      <td>6.5</td>
+      <td>8.0</td>
+      <td>7.5</td>
+      <td>-3.3</td>
+      <td>71.7</td>
+      <td>13.0</td>
+      <td>Vikmione</td>
+      <td>7.5625</td>
+      <td>8.25</td>
+      <td>7.125</td>
+      <td>7.0</td>
+      <td>73.2</td>
+      <td>6.0</td>
+      <td>110.0</td>
+      <td>44624.0</td>
+      <td>1168.0</td>
+      <td>471.0</td>
+      <td>2022-09-20</td>
+      <td>WIP</td>
+      <td>canon-divergence</td>
+      <td>2026-04-09</td>
+      <td>1297.0</td>
+      <td>34.4</td>
+      <td>2.6</td>
+      <td>1.1</td>
+      <td>0.97</td>
+      <td>79.0</td>
+      <td>Mainstream</td>
+      <td>33.368</td>
+      <td>Romance</td>
+      <td>A GoF reimagining where Hermione falls for Viktor while juggling house-elf activism, friendship crises, dark magic, and mystery.</td>
+      <td>The war itself is not yet central; this is primarily a fourth-year reworking that sets up a different emotional and plot trajectory before the Voldemort endgame.</td>
+      <td>The balance between romance and mystery inside a recognizably GoF framework.</td>
+      <td>Bcaused the work is still incomplete, its full larger-war payoff remains unresolved.</td>
+      <td>Canon-div</td>
+      <td>It is explicitly a Goblet of Fire reimagining, with Hermione/Viktor romance embedded in book 4 mystery and plot. That is almost the cleanest possible canon-div fit.</td>
+      <td>Ivy_Clarke</td>
+      <td><a href="https://archiveofourown.org/works/41834889" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/41834889</a></td>
+    </tr>
+    <tr>
+      <td>Light to fight the shadows</td>
+      <td>10</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.5</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>8.375</td>
+      <td>7.5</td>
+      <td>6.75</td>
+      <td>7.5</td>
+      <td>8.7</td>
+      <td>6.6</td>
+      <td>5.5</td>
+      <td>71.5</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>8.25</td>
+      <td>7.0</td>
+      <td>7.25</td>
+      <td>8.0</td>
+      <td>8.7</td>
+      <td>6.3</td>
+      <td>9.5</td>
+      <td>72.5</td>
+      <td>5.0</td>
+      <td>Vikmione</td>
+      <td>8.3125</td>
+      <td>7.25</td>
+      <td>7.0</td>
+      <td>7.75</td>
+      <td>72.6</td>
+      <td>5.0</td>
+      <td>47.0</td>
+      <td>10247.0</td>
+      <td>518.0</td>
+      <td>149.0</td>
+      <td>2021-03-17</td>
+      <td>Complete</td>
+      <td>Intermezzo</td>
+      <td>2026-04-09</td>
+      <td>1849.0</td>
+      <td>5.5</td>
+      <td>5.1</td>
+      <td>1.5</td>
+      <td>0.99</td>
+      <td>73.0</td>
+      <td>Mainstream</td>
+      <td>5.445</td>
+      <td>Romance</td>
+      <td>During the Horcrux hunt, Hermione and Harry visit Viktor and Hermione and Viktor reconnect while forced into isolation.</td>
+      <td>Viktor is indirectly involved during the Horcrux hunt.</td>
+      <td>Strong blend of philosophy and relationship.</td>
+      <td>Limited scale due to isolated setting.</td>
+      <td>Intermezzo</td>
+      <td>This is the clearest new fit for the added category: a DH-era interruption/visit during the Horcrux hunt, with emotional importance but not a full-scale reengineering of the HP plot.</td>
+      <td>discoXena</td>
+      <td><a href="http://archiveofourown.org/works/30090315" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/30090315</a></td>
+    </tr>
+    <tr>
+      <td>Hermione Granger and the silent country</td>
+      <td>10</td>
+      <td>9.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.25</td>
+      <td>10.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>7.7</td>
+      <td>8.3</td>
+      <td>0.1</td>
+      <td>77.1</td>
+      <td>14.0</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>3.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>10.0</td>
+      <td>7.5</td>
+      <td>9.5</td>
+      <td>7.5</td>
+      <td>5.0</td>
+      <td>8.3</td>
+      <td>8.3</td>
+      <td>-17.2</td>
+      <td>65.8</td>
+      <td>32.0</td>
+      <td>Vikmione</td>
+      <td>7.875</td>
+      <td>9.75</td>
+      <td>7.25</td>
+      <td>6.0</td>
+      <td>71.5</td>
+      <td>23.0</td>
+      <td>189.0</td>
+      <td>55616.0</td>
+      <td>793.0</td>
+      <td>419.0</td>
+      <td>2020-11-12</td>
+      <td>Complete</td>
+      <td>alternate reality</td>
+      <td>2026-04-09</td>
+      <td>1974.0</td>
+      <td>28.2</td>
+      <td>1.4</td>
+      <td>0.8</td>
+      <td>0.99</td>
+      <td>69.0</td>
+      <td>Mainstream</td>
+      <td>27.918</td>
+      <td>Plot</td>
+      <td>Hermione studies abroad in France in a heavy AU setting with altered canon elements.</td>
+      <td>War elements exist but are seriously restructured in AU.</td>
+      <td>Expansive AU worldbuilding.</td>
+      <td>The Hermione/Viktor relationship is not always not always the central focus.</td>
+      <td>Alternate Reality</td>
+      <td>Hermione is a Beauxbatons student in a large-scale AU beginning well before GoF; even though Triwizard appears, the fic’s core setting is a fundamentally different life path.</td>
+      <td>Callmesalticidae</td>
+      <td><a href="https://archiveofourown.org/works/27111157" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/27111157</a></td>
+    </tr>
+    <tr>
+      <td>doe</td>
+      <td>8</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.25</td>
+      <td>7.5</td>
+      <td>8.0</td>
+      <td>7.5</td>
+      <td>8.3</td>
+      <td>7.3</td>
+      <td>1.2</td>
+      <td>74.2</td>
+      <td>3.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>6.5</td>
+      <td>7.5</td>
+      <td>7.5</td>
+      <td>6.5</td>
+      <td>7.7</td>
+      <td>6.8</td>
+      <td>0.3</td>
+      <td>68.3</td>
+      <td>7.0</td>
+      <td>Vikmione</td>
+      <td>6.875</td>
+      <td>7.5</td>
+      <td>7.75</td>
+      <td>7.0</td>
+      <td>71.3</td>
+      <td>5.0</td>
+      <td>121.0</td>
+      <td>8100.0</td>
+      <td>307.0</td>
+      <td>296.0</td>
+      <td>2026-02-08</td>
+      <td>WIP</td>
+      <td>canon-divergence</td>
+      <td>2026-04-09</td>
+      <td>60.0</td>
+      <td>135.0</td>
+      <td>3.8</td>
+      <td>3.7</td>
+      <td>0.4</td>
+      <td>76.0</td>
+      <td>Mainstream</td>
+      <td>54.0</td>
+      <td>Romance</td>
+      <td>A GoF reinterpretation, focusing on Hermione and Viktor’s early romantic development.</td>
+      <td>War not yet central.</td>
+      <td>Strong emotional and coming-of-age elements.</td>
+      <td>Limited impact on broader narrative stakes.</td>
+      <td>Canon-div</td>
+      <td>It is a Triwizard-era romance AU, so it still fits the GoF-starting branch better than Alternate Reality.</td>
+      <td>cementtblock</td>
+      <td><a href="https://archiveofourown.org/works/79114106" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/79114106</a></td>
+    </tr>
+    <tr>
+      <td>To Feel To Fall</td>
+      <td>10</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.5</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.125</td>
+      <td>9.0</td>
+      <td>7.75</td>
+      <td>6.5</td>
+      <td>7.3</td>
+      <td>7.9</td>
+      <td>-0.7</td>
+      <td>72.3</td>
+      <td>15.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>6.5</td>
+      <td>9.0</td>
+      <td>7.75</td>
+      <td>6.0</td>
+      <td>7.3</td>
+      <td>7.5</td>
+      <td>-4.2</td>
+      <td>68.8</td>
+      <td>18.0</td>
+      <td>Vikmione</td>
+      <td>6.8125</td>
+      <td>9.0</td>
+      <td>7.75</td>
+      <td>6.25</td>
+      <td>70.5</td>
+      <td>16.0</td>
+      <td>80.0</td>
+      <td>6770.0</td>
+      <td>158.0</td>
+      <td>54.0</td>
+      <td>2020-05-30</td>
+      <td>WIP</td>
+      <td>alternate reality</td>
+      <td>2026-04-09</td>
+      <td>2140.0</td>
+      <td>3.2</td>
+      <td>2.3</td>
+      <td>0.8</td>
+      <td>0.99</td>
+      <td>66.0</td>
+      <td>Mainstream</td>
+      <td>3.168</td>
+      <td>Romance</td>
+      <td>Starting as early as 1992 and ranging across Hogwarts, Durmstrang, and other international settings, the story explores Hermione’s growth and Viktor’s life with an affliction through expansive worldbuilding that only loosely “plays around canon.”</td>
+      <td>No clear canon-war solution is central yet; the story is more about formative development, relationships, learning, and Viktor’s personal challenges than the Voldemort war itself.</td>
+      <td>The best element is the international, language-and-culture-heavy worldbuilding around Hermione and Viktor.</td>
+      <td>The weakest element is that the story’s breadth makes it feel less anchored to a specific canon conflict.</td>
+      <td>Alternate Reality</td>
+      <td>It starts as early as 1992, expands into international schools and invented affliction/worldbuilding, and only “plays around canon.” That is too structurally different from your GoF-starting canon-div definition.</td>
+      <td>ReineP</td>
+      <td><a href="https://archiveofourown.org/works/24452869" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/24452869</a></td>
+    </tr>
+    <tr>
+      <td>The Flower Shop</td>
+      <td>10</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>7.5</td>
+      <td>7.5</td>
+      <td>6.5</td>
+      <td>7.5</td>
+      <td>7.7</td>
+      <td>6.0</td>
+      <td>8.3</td>
+      <td>68.3</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>7.5</td>
+      <td>7.0</td>
+      <td>6.75</td>
+      <td>8.0</td>
+      <td>7.7</td>
+      <td>6.0</td>
+      <td>9.2</td>
+      <td>69.2</td>
+      <td>3.0</td>
+      <td>Vikmione</td>
+      <td>7.5</td>
+      <td>7.25</td>
+      <td>6.625</td>
+      <td>7.75</td>
+      <td>68.8</td>
+      <td>5.0</td>
+      <td>92.0</td>
+      <td>22121.0</td>
+      <td>497.0</td>
+      <td>43.0</td>
+      <td>2016-07-21</td>
+      <td>Complete</td>
+      <td>post-war</td>
+      <td>2026-04-09</td>
+      <td>3549.0</td>
+      <td>6.2</td>
+      <td>2.2</td>
+      <td>0.2</td>
+      <td>1.0</td>
+      <td>67.0</td>
+      <td>Mainstream</td>
+      <td>6.2</td>
+      <td>Romance</td>
+      <td>Years after Hogwarts and after the war, Hermione works as a mediwitch in Bulgaria, reconnects with Viktor through the Vratsa Vultures and Blaguna’s flower shop, and rebuilds a love that survived silence, war, and separation.</td>
+      <td>Viktor did not join Harry’s canon war mission; instead, the war’s role is separation, unanswered letters, and the damage both must live through before finding each other again.</td>
+      <td>The best element is the gentle postwar reconnection in Bulgaria, especially the emotional role of the flower shop as a place of healing and belonging.</td>
+      <td>The weakest element is that the larger war consequences stay mostly personal and domestic, rather than deeply political or strategic.</td>
+      <td>Postwar</td>
+      <td>The romance begins years later in a life clearly shaped by the aftermath of war, Hermione’s need for purpose, and the emotional damage of separation. The war is not just background history; it explains the whole setup.</td>
+      <td>paigevlindsay</td>
+      <td><a href="https://archiveofourown.org/works/7544140" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/7544140</a></td>
+    </tr>
+    <tr>
+      <td>There'll Never Be Enough of Us</td>
+      <td>10</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>7.5</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>7.125</td>
+      <td>7.5</td>
+      <td>6.5</td>
+      <td>7.0</td>
+      <td>7.7</td>
+      <td>5.6</td>
+      <td>11.7</td>
+      <td>67.7</td>
+      <td>5.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>6.75</td>
+      <td>7.0</td>
+      <td>6.75</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>5.5</td>
+      <td>12.9</td>
+      <td>67.9</td>
+      <td>1.0</td>
+      <td>Vikmione</td>
+      <td>6.9375</td>
+      <td>7.25</td>
+      <td>6.625</td>
+      <td>7.0</td>
+      <td>67.8</td>
+      <td>3.0</td>
+      <td>163.0</td>
+      <td>30738.0</td>
+      <td>745.0</td>
+      <td>793.0</td>
+      <td>2024-11-26</td>
+      <td>WIP</td>
+      <td>canon-divergence</td>
+      <td>2026-04-09</td>
+      <td>499.0</td>
+      <td>61.6</td>
+      <td>2.4</td>
+      <td>2.6</td>
+      <td>0.88</td>
+      <td>74.0</td>
+      <td>Mainstream</td>
+      <td>54.208</td>
+      <td>Romance</td>
+      <td>Hermione and Viktor's library friendship in GoF grows into romance and continues forward through later school years and into Deathly Hallows.</td>
+      <td>Viktor’s final war role appears to be as Hermione’s continuing partner across the war years, but as this is WIP, the full wartime resolution is still unknown.</td>
+      <td>The slow emotional accumulation from the Yule Ball era and intimacy onward.</td>
+      <td>As the story is spanning many years, the plot can feel broad and diffuse rather than sharply concentrated.</td>
+      <td>Canon-div</td>
+      <td>It starts in fourth year, builds from Yule Ball / library interactions, and explicitly carries that relationship forward through later canon, which is exactly your canon-div model.</td>
+      <td>MayimOr</td>
+      <td><a href="https://archiveofourown.org/works/60848947" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/60848947</a></td>
+    </tr>
+    <tr>
+      <td>Letter of Survival</td>
+      <td>9</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>6.25</td>
+      <td>7.5</td>
+      <td>6.7</td>
+      <td>5.8</td>
+      <td>7.0</td>
+      <td>65.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>7.75</td>
+      <td>7.0</td>
+      <td>6.25</td>
+      <td>7.5</td>
+      <td>7.3</td>
+      <td>6.3</td>
+      <td>3.3</td>
+      <td>66.3</td>
+      <td>8.0</td>
+      <td>Vikmione</td>
+      <td>7.375</td>
+      <td>7.0</td>
+      <td>6.25</td>
+      <td>7.5</td>
+      <td>65.6</td>
+      <td>6.0</td>
+      <td>152.0</td>
+      <td>37839.0</td>
+      <td>751.0</td>
+      <td>1630.0</td>
+      <td>2024-06-28</td>
+      <td>Complete</td>
+      <td>post-war</td>
+      <td>2026-04-09</td>
+      <td>650.0</td>
+      <td>58.2</td>
+      <td>2.0</td>
+      <td>4.3</td>
+      <td>0.88</td>
+      <td>55.0</td>
+      <td>Mainstream</td>
+      <td>51.216</td>
+      <td>Romance</td>
+      <td>Post-war Hermione seeks refuge with Viktor while dealing with trauma and recovery.</td>
+      <td>Viktor provides safety and emotional healing.</td>
+      <td>Deep trauma exploration and healing arc.</td>
+      <td>Dark themes may be overwhelming.</td>
+      <td>Postwar</td>
+      <td>It opens after the Battle of Hogwarts, with Hermione writing to Viktor for support and safety; healing is central.</td>
+      <td>Buddybee13</td>
+      <td><a href="http://archiveofourown.org/works/56968588" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/56968588</a></td>
+    </tr>
+    <tr>
+      <td>To the You of 1994</td>
+      <td>5</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>6.5</td>
+      <td>6.5</td>
+      <td>7.5</td>
+      <td>6.5</td>
+      <td>6.0</td>
+      <td>7.5</td>
+      <td>16.7</td>
+      <td>66.7</td>
+      <td>3.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>10.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>5.5</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>4.2</td>
+      <td>64.2</td>
+      <td>18.0</td>
+      <td>Vikmione</td>
+      <td>6.25</td>
+      <td>7.25</td>
+      <td>7.75</td>
+      <td>6.0</td>
+      <td>65.4</td>
+      <td>11.0</td>
+      <td>137.0</td>
+      <td>19992.0</td>
+      <td>437.0</td>
+      <td>374.0</td>
+      <td>2023-11-30</td>
+      <td>WIP</td>
+      <td>canon-divergence</td>
+      <td>2026-04-09</td>
+      <td>861.0</td>
+      <td>23.2</td>
+      <td>2.2</td>
+      <td>1.9</td>
+      <td>0.94</td>
+      <td>71.0</td>
+      <td>Mainstream</td>
+      <td>21.808</td>
+      <td>Romance</td>
+      <td>Set in 1994 around the Triwizard Tournament, the fic intensifies the GoF connection with magical bonds, Slavic rituals, dark magic, and a much more mythic and intimate Hermione/Viktor relationship.</td>
+      <td>Viktor’s wartime role is not yet in the main point; at this stage he is being positioned as Hermione’s magically significant partner before the later war period.</td>
+      <td>The ritual-heavy, culturally specific expansion of Viktor’s side of the world.</td>
+      <td>The added dark/ritual mechanics can pull the story a bit away from the cleaner emotional line of GoF.</td>
+      <td>Canon-div</td>
+      <td>Despite demon deals, magical bonds, and ritual additions, the fic is still fundamentally a 1994 / Triwizard Vikmione story that reworks GoF from inside that era rather than replacing the setting wholesale.</td>
+      <td>LittleChurro</td>
+      <td><a href="https://archiveofourown.org/works/51945343" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/51945343</a></td>
+    </tr>
+    <tr>
+      <td>Runes and Rituals</td>
+      <td>9</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>6.5</td>
+      <td>8.5</td>
+      <td>6.75</td>
+      <td>6.5</td>
+      <td>6.7</td>
+      <td>7.3</td>
+      <td>1.8</td>
+      <td>68.8</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>10.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>5.75</td>
+      <td>9.0</td>
+      <td>6.25</td>
+      <td>5.0</td>
+      <td>5.7</td>
+      <td>7.5</td>
+      <td>3.0</td>
+      <td>60.0</td>
+      <td>20.0</td>
+      <td>Vikmione</td>
+      <td>6.125</td>
+      <td>8.75</td>
+      <td>6.5</td>
+      <td>5.75</td>
+      <td>64.4</td>
+      <td>14.0</td>
+      <td>83.0</td>
+      <td>59888.0</td>
+      <td>1473.0</td>
+      <td>392.0</td>
+      <td>2019-09-13</td>
+      <td>Complete</td>
+      <td>post-war</td>
+      <td>2026-04-09</td>
+      <td>2400.0</td>
+      <td>25.0</td>
+      <td>2.5</td>
+      <td>0.7</td>
+      <td>1.0</td>
+      <td>78.0</td>
+      <td>Mainstream</td>
+      <td>25.0</td>
+      <td>Romance</td>
+      <td>After the war, Hermione returns from years of mastery study and collides with Viktor in a marriage-law plot shaped by ritual magic, old lore, and Ministry politics.</td>
+      <td>Viktor does not fight in the canon war plot here; his main “war solution” role is surviving the aftermath, escaping one marriage law, and becoming part of Hermione’s postwar restructuring of life and magic.</td>
+      <td>The best element is the fusion of postwar reconstruction with the rituals and runes worldbuilding.</td>
+      <td>The weakest element is that the central conflict is driven more by marriage-law mechanics than by wider wizarding-world consequences.</td>
+      <td>Postwar</td>
+      <td>It explicitly starts after the war, with Hermione returning from postwar mastery study and the plot grounded in rebuilding life, magical practice, and adult political structures rather than GoF continuity.</td>
+      <td>dyslexic_penquin</td>
+      <td><a href="http://archiveofourown.org/works/20621435" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/20621435</a></td>
+    </tr>
+    <tr>
+      <td>Alignment – Through the Arch</td>
+      <td>8</td>
+      <td>9.0</td>
+      <td>6.0</td>
+      <td>6.5</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>7.875</td>
+      <td>8.0</td>
+      <td>6.5</td>
+      <td>6.5</td>
+      <td>8.0</td>
+      <td>7.1</td>
+      <td>-1.2</td>
+      <td>69.8</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>3.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>10.0</td>
+      <td>6.75</td>
+      <td>8.5</td>
+      <td>6.25</td>
+      <td>4.5</td>
+      <td>7.7</td>
+      <td>7.0</td>
+      <td>-11.7</td>
+      <td>58.3</td>
+      <td>27.0</td>
+      <td>Vikmione</td>
+      <td>7.3125</td>
+      <td>8.25</td>
+      <td>6.375</td>
+      <td>5.5</td>
+      <td>64.1</td>
+      <td>18.0</td>
+      <td>29.0</td>
+      <td>755.0</td>
+      <td>13.0</td>
+      <td>11.0</td>
+      <td>2026-01-20</td>
+      <td>Complete</td>
+      <td>alternate reality</td>
+      <td>2026-04-09</td>
+      <td>79.0</td>
+      <td>9.6</td>
+      <td>1.7</td>
+      <td>1.5</td>
+      <td>0.55</td>
+      <td>61.0</td>
+      <td>Mainstream</td>
+      <td>5.28</td>
+      <td>Plot</td>
+      <td>Following Cursed Child, Harry confronts alternate timelines through the Veil that once killed Sirius. Harry, Ron and Hermione discover the possible impact of Viktor Krum on the war.</td>
+      <td>Viktor has no direct active war role in the present timeline; the story is about retrospectively examining alternative timelines where Viktor prevented the Battle of Hogwarts.</td>
+      <td>The best element is the meta-ethical treatment of alternate timelines and consequences.</td>
+      <td>The weakest element is that Viktor/Hermione is more about tension and history than a central-lived romance.</td>
+      <td>Alternate Reality</td>
+      <td>This is post-canon, time-travel, alternate-timeline metafiction. It is not GoF-based canon-div, and it is not primarily a war-healing reunion either. Its core setting is structurally outside ordinary canon, so alternate reality fits best.</td>
+      <td>FastNeutrons</td>
+      <td><a href="https://archiveofourown.org/works/73668556" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/73668556</a></td>
+    </tr>
+    <tr>
+      <td>Looks Can Be Deceiving</td>
+      <td>5</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>7.5</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.125</td>
+      <td>6.5</td>
+      <td>7.0</td>
+      <td>6.5</td>
+      <td>6.7</td>
+      <td>7.9</td>
+      <td>16.9</td>
+      <td>66.9</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>6.75</td>
+      <td>6.5</td>
+      <td>6.5</td>
+      <td>5.0</td>
+      <td>6.3</td>
+      <td>7.5</td>
+      <td>-5.1</td>
+      <td>57.9</td>
+      <td>16.0</td>
+      <td>Vikmione</td>
+      <td>6.9375</td>
+      <td>6.5</td>
+      <td>6.75</td>
+      <td>5.75</td>
+      <td>62.4</td>
+      <td>10.0</td>
+      <td>442.0</td>
+      <td>204829.0</td>
+      <td>2693.0</td>
+      <td>820.0</td>
+      <td>2015-03-28</td>
+      <td>Complete</td>
+      <td>canon-divergence</td>
+      <td>2026-04-09</td>
+      <td>4030.0</td>
+      <td>50.8</td>
+      <td>1.3</td>
+      <td>0.4</td>
+      <td>1.0</td>
+      <td>68.0</td>
+      <td>Mainstream</td>
+      <td>50.8</td>
+      <td>Plot</td>
+      <td>AU where Snape mentors Hermione, altering her path and relationships, including Viktor.</td>
+      <td>Viktor participates in the war contextually.</td>
+      <td>Rich alternate character dynamics.</td>
+      <td>Very long with inconsistent pacing.</td>
+      <td>Canon-div</td>
+      <td>Even though some divergences begin earlier, the summary explicitly says it follows canon mostly until the end of GoF and then detours, so under your scheme it still belongs with canon-div rather than full Alternate Reality.</td>
+      <td>corvusdraconis</td>
+      <td><a href="http://archiveofourown.org/works/3630213" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/3630213</a></td>
+    </tr>
+    <tr>
+      <td>Finding their way back to love</td>
+      <td>9</td>
+      <td>4.0</td>
+      <td>8.0</td>
+      <td>6.5</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>5.875</td>
+      <td>7.0</td>
+      <td>6.5</td>
+      <td>7.5</td>
+      <td>6.0</td>
+      <td>5.6</td>
+      <td>5.7</td>
+      <td>61.7</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>6.5</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>5.875</td>
+      <td>6.0</td>
+      <td>6.25</td>
+      <td>6.5</td>
+      <td>5.3</td>
+      <td>5.9</td>
+      <td>6.6</td>
+      <td>59.6</td>
+      <td>2.0</td>
+      <td>Vikmione</td>
+      <td>5.875</td>
+      <td>6.5</td>
+      <td>6.375</td>
+      <td>7.0</td>
+      <td>60.6</td>
+      <td>4.0</td>
+      <td>295.0</td>
+      <td>59926.0</td>
+      <td>901.0</td>
+      <td>265.0</td>
+      <td>2020-05-09</td>
+      <td>Complete</td>
+      <td>post-war</td>
+      <td>2026-04-09</td>
+      <td>2161.0</td>
+      <td>27.7</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>0.99</td>
+      <td>63.0</td>
+      <td>Mainstream</td>
+      <td>27.423</td>
+      <td>Romance</td>
+      <td>After the war, Hermione escapes trauma and reconnects with Viktor, rebuilding their relationship.</td>
+      <td>Viktor provides refuge and emotional support.</td>
+      <td>Intense emotional healing and angst.</td>
+      <td>Plot can feel secondary to drama.</td>
+      <td>Postwar</td>
+      <td>The summary explicitly says the war has ended and Hermione’s pain is only beginning, which places the fic in recovery/aftermath territory.</td>
+      <td>Melissa1226</td>
+      <td><a href="http://archiveofourown.org/works/24098236" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/24098236</a></td>
+    </tr>
+    <tr>
+      <td>A Life in Letters</td>
+      <td>10</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.5</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>7.625</td>
+      <td>6.5</td>
+      <td>5.25</td>
+      <td>7.5</td>
+      <td>7.3</td>
+      <td>4.9</td>
+      <td>9.5</td>
+      <td>58.5</td>
+      <td>12.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.5</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>3.0</td>
+      <td>7.875</td>
+      <td>6.5</td>
+      <td>5.5</td>
+      <td>7.5</td>
+      <td>7.7</td>
+      <td>5.1</td>
+      <td>9.6</td>
+      <td>60.6</td>
+      <td>11.0</td>
+      <td>Vikmione</td>
+      <td>7.75</td>
+      <td>6.5</td>
+      <td>5.375</td>
+      <td>7.5</td>
+      <td>59.6</td>
+      <td>12.0</td>
+      <td>4.0</td>
+      <td>3176.0</td>
+      <td>167.0</td>
+      <td>17.0</td>
+      <td>2015-02-21</td>
+      <td>Complete</td>
+      <td>canon-divergence</td>
+      <td>2026-04-09</td>
+      <td>4065.0</td>
+      <td>0.8</td>
+      <td>5.3</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>75.0</td>
+      <td>Mainstream</td>
+      <td>0.8</td>
+      <td>Romance</td>
+      <td>Hermione Granger and Viktor Krum maintain a relationship after the Triwizard Tournament. The story is told in the form of letters.</td>
+      <td>No direct war involvement; mostly pre-war emotional buildup.</td>
+      <td>Intimate epistolary format, that enhances the emotional depth.</td>
+      <td>Limited scope and minimal broader plot impact.</td>
+      <td>Canon-div</td>
+      <td>It begins from the post-Triwizard correspondence and extends the idea that Hermione and Viktor continue their connection instead of fading apart after GoF.</td>
+      <td>articcat621</td>
+      <td><a href="https://archiveofourown.org/works/3402233" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/3402233</a></td>
+    </tr>
+    <tr>
+      <td>Metanoia</td>
+      <td>8</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>7.5</td>
+      <td>6.5</td>
+      <td>5.0</td>
+      <td>6.5</td>
+      <td>7.0</td>
+      <td>5.8</td>
+      <td>-1.3</td>
+      <td>56.7</td>
+      <td>13.0</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>7.75</td>
+      <td>6.5</td>
+      <td>4.75</td>
+      <td>7.0</td>
+      <td>7.3</td>
+      <td>5.3</td>
+      <td>2.4</td>
+      <td>55.4</td>
+      <td>16.0</td>
+      <td>Vikmione</td>
+      <td>7.625</td>
+      <td>6.5</td>
+      <td>4.875</td>
+      <td>6.75</td>
+      <td>56.0</td>
+      <td>15.0</td>
+      <td>82.0</td>
+      <td>34182.0</td>
+      <td>1059.0</td>
+      <td>261.0</td>
+      <td>2020-11-18</td>
+      <td>Complete</td>
+      <td>post-war</td>
+      <td>2026-04-09</td>
+      <td>1968.0</td>
+      <td>17.4</td>
+      <td>3.1</td>
+      <td>0.8</td>
+      <td>0.99</td>
+      <td>62.0</td>
+      <td>Mainstream</td>
+      <td>17.226</td>
+      <td>Plot</td>
+      <td>Post-war story focusing on healing, relationships, and a concurrent mystery plot.</td>
+      <td>Viktor supports in post-war recovery phase.</td>
+      <td>Balanced healing and mystery elements.</td>
+      <td>Hermione/Viktor is not always the primary focus.</td>
+      <td>Postwar</td>
+      <td>It is explicitly tagged post-war/PTSD and built around trauma recovery.</td>
+      <td>FinnDecananas</td>
+      <td><a href="http://archiveofourown.org/works/14504901" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/14504901</a></td>
+    </tr>
+    <tr>
+      <td>But Daddy I Love Him</td>
+      <td>8</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>7.5</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>7.375</td>
+      <td>5.5</td>
+      <td>5.75</td>
+      <td>6.5</td>
+      <td>7.0</td>
+      <td>5.9</td>
+      <td>-0.5</td>
+      <td>58.5</td>
+      <td>7.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>7.5</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>6.375</td>
+      <td>4.0</td>
+      <td>5.25</td>
+      <td>6.0</td>
+      <td>5.3</td>
+      <td>5.9</td>
+      <td>6.0</td>
+      <td>46.0</td>
+      <td>12.0</td>
+      <td>Vikmione</td>
+      <td>6.875</td>
+      <td>4.75</td>
+      <td>5.5</td>
+      <td>6.25</td>
+      <td>52.3</td>
+      <td>10.0</td>
+      <td>88.0</td>
+      <td>5269.0</td>
+      <td>160.0</td>
+      <td>111.0</td>
+      <td>2025-04-24</td>
+      <td>WIP</td>
+      <td>canon-divergence</td>
+      <td>2026-04-09</td>
+      <td>350.0</td>
+      <td>15.1</td>
+      <td>3.0</td>
+      <td>2.1</td>
+      <td>0.78</td>
+      <td>74.0</td>
+      <td>Mainstream</td>
+      <td>11.778</td>
+      <td>Romance</td>
+      <td>AU retelling of GoF events with a more rebellious Hermione and intensified relationship.</td>
+      <td>War not yet central.</td>
+      <td>Fun character reinterpretation and dynamic chemistry.</td>
+      <td>Less grounded in serious plot stakes.</td>
+      <td>Canon-div</td>
+      <td>It is a GoF retelling/reworking centered on fourth year and Viktor’s entrance into Hermione’s life.</td>
+      <td>PoppiesGrowOnVenus</td>
+      <td><a href="https://archiveofourown.org/works/64982152" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/64982152</a></td>
+    </tr>
+    <tr>
+      <td>My Love Mine All Mine</td>
+      <td>10</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>6.5</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>6.125</td>
+      <td>6.5</td>
+      <td>4.5</td>
+      <td>6.0</td>
+      <td>6.7</td>
+      <td>4.1</td>
+      <td>10.0</td>
+      <td>51.0</td>
+      <td>12.0</td>
+      <td>9.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>6.25</td>
+      <td>6.0</td>
+      <td>4.25</td>
+      <td>5.5</td>
+      <td>6.7</td>
+      <td>4.3</td>
+      <td>5.8</td>
+      <td>48.8</td>
+      <td>13.0</td>
+      <td>Vikmione</td>
+      <td>6.1875</td>
+      <td>6.25</td>
+      <td>4.375</td>
+      <td>5.75</td>
+      <td>49.9</td>
+      <td>12.0</td>
+      <td>12.0</td>
+      <td>2308.0</td>
+      <td>227.0</td>
+      <td>44.0</td>
+      <td>2025-01-15</td>
+      <td>Complete</td>
+      <td>Intermezzo</td>
+      <td>2026-04-09</td>
+      <td>449.0</td>
+      <td>5.1</td>
+      <td>9.8</td>
+      <td>1.9</td>
+      <td>0.88</td>
+      <td>58.0</td>
+      <td>Mainstream</td>
+      <td>4.488</td>
+      <td>Romance</td>
+      <td>Short, emotional exploration of Hermione and Viktor’s relationship between HBP and DH.</td>
+      <td>The war is mostly background.</td>
+      <td>Strong emotional intensity in short form.</td>
+      <td>Limited depth due to its length.</td>
+      <td>Intermezzo</td>
+      <td>This one-shot happens on the eve of DH flight / just before Bill and Fleur’s wedding, with Hermione arranging a private meeting with Viktor under the shadow of war; that fits your “short intersect” definition better than canon-div.</td>
+      <td>MayimOr</td>
+      <td><a href="https://archiveofourown.org/works/62240974" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/62240974</a></td>
+    </tr>
+    <tr>
+      <td>Learning To Dance</td>
+      <td>3</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.5</td>
+      <td>4.0</td>
+      <td>5.25</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>5.5</td>
+      <td>14.6</td>
+      <td>44.6</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.5</td>
+      <td>4.75</td>
+      <td>4.5</td>
+      <td>4.3</td>
+      <td>5.0</td>
+      <td>4.9</td>
+      <td>47.9</td>
+      <td>6.0</td>
+      <td>Vikmione</td>
+      <td>5.25</td>
+      <td>4.75</td>
+      <td>5.0</td>
+      <td>5.25</td>
+      <td>48.8</td>
+      <td>3.0</td>
+      <td>143.0</td>
+      <td>42057.0</td>
+      <td>862.0</td>
+      <td>231.0</td>
+      <td>2016-01-27</td>
+      <td>Complete, but sequal misses</td>
+      <td>canon-divergence</td>
+      <td>2026-04-09</td>
+      <td>3725.0</td>
+      <td>11.3</td>
+      <td>2.0</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>65.0</td>
+      <td>Mainstream</td>
+      <td>11.3</td>
+      <td>Romance</td>
+      <td>Explores a destiny-bound relationship between Hermione and Viktor starting from Hogwarts years. The story ends after GoF and plans on a sequal, but that sequal does not exist.</td>
+      <td>Viktor remains mostly outside war efforts.</td>
+      <td>Light tone and relationship focus.</td>
+      <td>Less depth in larger narrative stakes.</td>
+      <td>Canon-div</td>
+      <td>Its premise is basically “what if they did not drift apart but stayed together despite what comes,” which is exactly your canon-div logic.</td>
+      <td>Bookhound89</td>
+      <td><a href="http://archiveofourown.org/works/5836018" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/5836018</a></td>
+    </tr>
+    <tr>
+      <td>This Ship has Sailed</td>
+      <td>7</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>6.5</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>5.875</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.7</td>
+      <td>4.1</td>
+      <td>3.8</td>
+      <td>44.8</td>
+      <td>10.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>5.75</td>
+      <td>5.0</td>
+      <td>4.25</td>
+      <td>5.5</td>
+      <td>6.0</td>
+      <td>4.0</td>
+      <td>6.3</td>
+      <td>46.3</td>
+      <td>8.0</td>
+      <td>Vikmione</td>
+      <td>5.8125</td>
+      <td>5.0</td>
+      <td>4.125</td>
+      <td>5.25</td>
+      <td>45.5</td>
+      <td>9.0</td>
+      <td>24.0</td>
+      <td>9350.0</td>
+      <td>437.0</td>
+      <td>99.0</td>
+      <td>2020-02-26</td>
+      <td>Complete</td>
+      <td>Intermezzo</td>
+      <td>2026-04-09</td>
+      <td>2234.0</td>
+      <td>4.2</td>
+      <td>4.7</td>
+      <td>1.1</td>
+      <td>1.0</td>
+      <td>71.0</td>
+      <td>Mainstream</td>
+      <td>4.2</td>
+      <td>Romance</td>
+      <td>Hermione visits Viktor in Bulgaria after GoF; the story then stretches across years with letters, interruption, war, and eventually they are reunited.</td>
+      <td>Viktor does not join the core war action; instead he waits, writes, remains emotionally tethered to Hermione, and is kept at a distance from her wartime burden.</td>
+      <td>The intensity of the temporary connection and the sense of a love deferred rather than erased.</td>
+      <td>The relationship has little effect on the larger HP plot.</td>
+      <td>Intermezzo</td>
+      <td>The defining event is a short post-GoF summer visit to Bulgaria. Even though the relationship echoes into later years, the story is not primarily “what if they stayed together and changed HP canon?” It is closer to a strong intersect that leaves the larger canon largely intact.</td>
+      <td>KrumPuffer</td>
+      <td><a href="https://archiveofourown.org/works/22915336" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/22915336</a></td>
+    </tr>
+    <tr>
+      <td>Shield and Star</td>
+      <td>0</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>2.5</td>
+      <td>6.25</td>
+      <td>5.0</td>
+      <td>5.3</td>
+      <td>7.0</td>
+      <td>38.8</td>
+      <td>38.8</td>
+      <td>28.0</td>
+      <td>2.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>6.25</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>2.5</td>
+      <td>4.3</td>
+      <td>7.3</td>
+      <td>-3.4</td>
+      <td>39.6</td>
+      <td>29.0</td>
+      <td>Vikmione</td>
+      <td>6.625</td>
+      <td>3.75</td>
+      <td>5.625</td>
+      <td>3.75</td>
+      <td>45.4</td>
+      <td>16.0</td>
+      <td>150.0</td>
+      <td>76568.0</td>
+      <td>2780.0</td>
+      <td>927.0</td>
+      <td>2018-02-12</td>
+      <td>Complete, but sequel misses</td>
+      <td>canon-divergence</td>
+      <td>2026-04-09</td>
+      <td>2978.0</td>
+      <td>25.7</td>
+      <td>3.6</td>
+      <td>1.2</td>
+      <td>1.0</td>
+      <td>59.0</td>
+      <td>Mainstream</td>
+      <td>25.7</td>
+      <td>Plot</td>
+      <td>Beginning between third and fourth year, Hermione gets a “unique educational opportunity,” uncovers Dumbledore as an active threat, and becomes part of a much more strategic anti-Dumbledore / anti-manipulation fourth-year storyline around the Triwizard setup. It is part of a series, but the sequel misses.</td>
+      <td>Viktor is already integrated into the resistance-side strategy before the war fully unfolds; he helps protect Harry and Hermione and is part of the group countering Dumbledore’s manipulation.</td>
+      <td>The high-stakes conspiracy plot: Hermione’s altered education has immediate political and magical consequences.</td>
+      <td>The Vikmione relationship is mostly a setup rather than a fully developed romance.</td>
+      <td>Canon-div</td>
+      <td>Although divergence begins after PoA, the fic is still built to run directly into a reworked fourth year / Triwizard trajectory rather than relocating Hermione into a wholly separate reality. Under your narrower scheme, this still fits canon-div better than alternate reality.</td>
+      <td>LadyLightles</td>
+      <td><a href="http://archiveofourown.org/works/13657671" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/13657671</a></td>
+    </tr>
+    <tr>
+      <td>Love Me Like You Do</td>
+      <td>2</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>3.5</td>
+      <td>6.0</td>
+      <td>5.5</td>
+      <td>5.3</td>
+      <td>6.5</td>
+      <td>23.3</td>
+      <td>43.3</td>
+      <td>17.0</td>
+      <td>2.0</td>
+      <td>7.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>6.75</td>
+      <td>3.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>5.7</td>
+      <td>6.0</td>
+      <td>11.3</td>
+      <td>41.3</td>
+      <td>23.0</td>
+      <td>Vikmione</td>
+      <td>6.375</td>
+      <td>3.25</td>
+      <td>6.0</td>
+      <td>5.75</td>
+      <td>42.3</td>
+      <td>20.0</td>
+      <td>144.0</td>
+      <td>40283.0</td>
+      <td>1417.0</td>
+      <td>399.0</td>
+      <td>2017-02-05</td>
+      <td>Complete</td>
+      <td>alternate reality</td>
+      <td>2026-04-09</td>
+      <td>3350.0</td>
+      <td>12.0</td>
+      <td>3.5</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>72.0</td>
+      <td>Mainstream</td>
+      <td>12.0</td>
+      <td>Romance</td>
+      <td>Soulmate AU with magical traditions, politics, and a complex Hermione/Viktor bond. Marriage law, soulmates, past lives, and a heavily reworked magical-social framework place it well outside a GoF-continuation or postwar-healing structure.</td>
+      <td>War not central; more political/social conflicts.</td>
+      <td>Creative AU concepts (soulmates, mythology).</td>
+      <td>Can feel disconnected from canon stakes.</td>
+      <td>Alternate Reality</td>
+      <td>Marriage law, soulmates, past lives, and a heavily reworked magical-social framework place it well outside a GoF-continuation or postwar-healing structure.</td>
+      <td>badluckvixen13 (fanaticmusings)</td>
+      <td><a href="https://archiveofourown.org/works/9362093." target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/9362093.</a></td>
+    </tr>
+    <tr>
+      <td>Flower of the North</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>3.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>2.0</td>
+      <td>6.5</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>6.3</td>
+      <td>24.2</td>
+      <td>34.2</td>
+      <td>28.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>6.5</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>3.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>5.875</td>
+      <td>2.0</td>
+      <td>6.5</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>5.9</td>
+      <td>14.0</td>
+      <td>34.0</td>
+      <td>28.0</td>
+      <td>Vikmione</td>
+      <td>5.9375</td>
+      <td>2.0</td>
+      <td>6.5</td>
+      <td>6.0</td>
+      <td>34.1</td>
+      <td>28.0</td>
+      <td>108.0</td>
+      <td>54743.0</td>
+      <td>1635.0</td>
+      <td>783.0</td>
+      <td>2022-09-16</td>
+      <td>Complete</td>
+      <td>alternate reality</td>
+      <td>2026-04-09</td>
+      <td>1301.0</td>
+      <td>42.1</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.97</td>
+      <td>60.0</td>
+      <td>Extreme & interesting AU, Author explicietly stated that she used it to test idea's for another novel, explaining why the Harry Potter rubric axes are weak, holding back the rubric score. But not the hits.</td>
+      <td>40.837</td>
+      <td>Plot</td>
+      <td>Hermione transfers to Durmstrang after Hogwarts closed in CoS. Dark AU with Durmstrang elements, magic, and a more dangerous version of both characters.</td>
+      <td>Viktor is involved in darker, war-adjacent conflicts.</td>
+      <td>Unique dark tone and powerful characterizations.</td>
+      <td>Heavy themes may overshadow romance.</td>
+      <td>Alternate Reality</td>
+      <td>Your correction is right: the divergence happens in second year, with Hogwarts closed and Hermione relocated to Durmstrang; that is too structurally different to count as GoF canon-div under your rubric.</td>
+      <td>Buddybee13</td>
+      <td><a href="http://archiveofourown.org/works/41745237" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/41745237</a></td>
+    </tr>
+  </tbody>
+</table>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+    const table = $('#ficTable');
+
+    const dataTable = table.DataTable({
+      paging: true,
+      pageLength: -1,
+      lengthMenu: [[-1, 10, 25, 50, 100], ["All", 10, 25, 50, 100]],
+      searching: true,
+      ordering: true,
+      info: true,
+      autoWidth: false,
+      scrollX: true,
+      orderCellsTop: true
+    });
+
+    const vikmioneTypeColIdx = 67;
+
+    $.fn.dataTable.ext.search.push(function(settings, data) {
+      if (settings.nTable.id !== 'ficTable') return true;
+
+      const selected = $('#vikmione-type-filter').val();
+
+      // niets geselecteerd → alles tonen
+      if (!selected || selected.length === 0) {
+        return true;
+      }
+
+      // ALS "All" gekozen → alles tonen
+      if (selected.includes("__ALL__")) {
+        return true;
+      }
+
+      const value = (data[vikmioneTypeColIdx] || '').toString().trim();
+      return selected.includes(value);
+    });
+
+    $('#vikmione-type-filter').on('change', function() {
+      dataTable.draw();
+    });
+
+    const focusColIdx = 62;
+
+    $.fn.dataTable.ext.search.push(function(settings, data) {
+      if (settings.nTable.id !== 'ficTable') return true;
+
+      const selected = $('#focus-filter').val();
+
+      // niets geselecteerd → alles tonen
+      if (!selected || selected.length === 0) {
+        return true;
+      }
+
+      // ALS "All" gekozen → alles tonen
+      if (selected.includes("__ALL__")) {
+        return true;
+      }
+
+      const value = (data[focusColIdx] || '').toString().trim();
+      return selected.includes(value);
+    });
+
+    $('#focus-filter').on('change', function() {
+      dataTable.draw();
+    });
+  });
+</script>
+</body>
+</html>
