@@ -5,10 +5,10 @@ from pathlib import Path
 
 import markdown
 
-INPUT_FILE = "../Methods/Methods.md"
-OUTPUT_FILE = "../Methods/index.html"
-PAGE_TITLE = "Methods"
-CURRENT_NAV = "Methods"
+INPUT_FILE = "../Discussion/Discussion.md"
+OUTPUT_FILE = "../Discussion/index.html"
+PAGE_TITLE = "Discussion"
+CURRENT_NAV = "Discussion"
 
 NAV_LINKS = [
     ("Recommendations", "https://metabee12345.github.io/Vikmiones/"),
