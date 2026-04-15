@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Results</title>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1.5rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table.dataTable {
+      width: 100% !important;
+      font-size: 12px;
+    }
+
+    table.dataTable thead th {
+      font-size: 16px;
+      font-weight: 600;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #000000;
+      white-space: nowrap;
+    }
+
+    table.dataTable tbody td {
+      font-size: 14px;
+      font-weight: 300;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #000000;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .header-bar h1 {
+      margin: 0;
+    }
+
+    .filters {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .filters > div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .filters select {
+      min-width: 200px;
+      height: 5.5em;
+      font-size: 13px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-bar">
+  <h1>Results</h1>
+
+    <div class="filters">
+      <label>Vikmione Type:</label>
+      <select id="vikmione-type-filter" multiple>
+        <option value="__ALL__">All</option>
+<option value="Alternate Reality">Alternate Reality</option>
+<option value="Canon-div">Canon-div</option>
+<option value="Intermezzo">Intermezzo</option>
+<option value="Postwar">Postwar</option>
+      </select>
+
+      <label>Focus:</label>
+      <select id="focus-filter" multiple>
+        <option value="__ALL__">All</option>
+<option value="Plot">Plot</option>
+<option value="Romance">Romance</option>
+      </select>
+    </div>
+  </div>
+
+  <table class="dataframe display nowrap compact" id="ficTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Titel</th>
+      <th>Author</th>
+      <th>URL</th>
+      <th>Status</th>
+      <th>Wordcount(k)</th>
+      <th>Vikmione Type</th>
+      <th>Focus</th>
+      <th>Total Hits</th>
+      <th>Years</th>
+      <th>Popularity</th>
+      <th>Quality(%)</th>
+      <th>Plot Summary</th>
+      <th>Strongest Point</th>
+      <th>Weakest Point</th>
+      <th>War solution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alignment</td>
+      <td>FastNeutrons</td>
+      <td><a href="https://archiveofourown.org/works/73628601" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/73628601</a></td>
+      <td>Complete</td>
+      <td>360.0</td>
+      <td>Canon-div</td>
+      <td>Plot</td>
+      <td>9138.0</td>
+      <td>0.43</td>
+      <td>43.068</td>
+      <td>87.9</td>
+      <td>Viktor actively joins Hermione in a ruthless, strategic Horcrux hunt, reshaping the outcome of the war.</td>
+      <td>Deep moral complexity and war strategy.</td>
+      <td>Complexity can be overwhelming</td>
+      <td>Viktor directly joins the Horcrux hunt and significantly alters the war outcome.</td>
+    </tr>
+    <tr>
+      <td>All the Names of Waiting</td>
+      <td>MayimOr</td>
+      <td><a href="https://archiveofourown.org/works/70894036" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/70894036</a></td>
+      <td>WIP</td>
+      <td>93.0</td>
+      <td>Postwar</td>
+      <td>Romance</td>
+      <td>3156.0</td>
+      <td>0.56</td>
+      <td>11.934</td>
+      <td>85.4</td>
+      <td>Starts with Hermione and Viktor dating in GoF. They break up, but years after the war, Hermione and Viktor reconnect, dealing with emotional baggage and political change.</td>
+      <td>Mature exploration of healing and second chances. Stellar Characterizations.</td>
+      <td>Slower pacing and less immediate plot tension.</td>
+      <td>Viktor waits during the war; the conflict is emotional aftermath rather than combat.</td>
+    </tr>
+    <tr>
+      <td>Debts of Honor</td>
+      <td>sareliz</td>
+      <td><a href="http://archiveofourown.org/works/23132749" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/23132749</a></td>
+      <td>WIP</td>
+      <td>551.0</td>
+      <td>Postwar</td>
+      <td>Plot</td>
+      <td>118644.0</td>
+      <td>6.08</td>
+      <td>53.5</td>
+      <td>84.2</td>
+      <td>Explores the consequences of Hermione’s post-war decisions, with political and personal ramifications.</td>
+      <td>Rich worldbuilding and long-term consequences.</td>
+      <td>Length and complexity may dilute focus.</td>
+      <td>Viktor supports from afar and later engages in rebuilding.</td>
+    </tr>
+    <tr>
+      <td>Air</td>
+      <td>Calebski</td>
+      <td><a href="http://archiveofourown.org/works/18766738" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/18766738</a></td>
+      <td>WIP</td>
+      <td>253.0</td>
+      <td>Canon-div</td>
+      <td>Romance</td>
+      <td>95681.0</td>
+      <td>6.92</td>
+      <td>37.9</td>
+      <td>82.5</td>
+      <td>Relationship develops from the Triwizard Tournament onward, expanding canon interactions.</td>
+      <td>Strong emotional progression across canon timeline.</td>
+      <td>Less focus on the wider plot consequences.</td>
+      <td>Viktor remains external to core war effort, as the story is WIP and stops after Ootp.</td>
+    </tr>
+    <tr>
+      <td>No more Trio</td>
+      <td>FastNeutrons</td>
+      <td><a href="https://archiveofourown.org/works/74098666" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/74098666</a></td>
+      <td>Complete</td>
+      <td>179.0</td>
+      <td>Canon-div</td>
+      <td>Plot</td>
+      <td>6016.0</td>
+      <td>0.41</td>
+      <td>26.39</td>
+      <td>77.8</td>
+      <td>AU where Hermione leaves Hogwarts for Viktor in Bulgaria and Dumbledore has to find an alternative for letting the trio search for horcruxes.</td>
+      <td>Deep ethical dilemmas and character study.</td>
+      <td>Extremely large scope.</td>
+      <td>Viktor takes Hermione with him to Bulgaria, preventing her from ever having to fight the war.</td>
+    </tr>
+    <tr>
+      <td>Hunting Shadows</td>
+      <td>TangentiaLives</td>
+      <td><a href="http://archiveofourown.org/works/23468659" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/23468659</a></td>
+      <td>Complete</td>
+      <td>184.0</td>
+      <td>Intermezzo</td>
+      <td>Romance</td>
+      <td>73529.0</td>
+      <td>6.02</td>
+      <td>33.5</td>
+      <td>75.4</td>
+      <td>Hermione trains in Bulgaria and grows closer to Viktor between PoS and GoF.</td>
+      <td>Strong slow-burn relationship integrated with a good plot.</td>
+      <td>The story has a limited impact on main HP events.</td>
+      <td>The war is not yet central; The story is pre-war development.</td>
+    </tr>
+    <tr>
+      <td>The Observer Effect</td>
+      <td>tereyaglikedi</td>
+      <td><a href="https://archiveofourown.org/works/32711164" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/32711164</a></td>
+      <td>Complete</td>
+      <td>151.0</td>
+      <td>Postwar</td>
+      <td>Plot</td>
+      <td>12725.0</td>
+      <td>4.64</td>
+      <td>7.35</td>
+      <td>73.8</td>
+      <td>A decade after Voldemort’s fall, Auror Viktor investigates terrorism and international magical crime in a fragile postwar world while Hermione’s research becomes entangled with the case.</td>
+      <td>The best element is the political-thriller / detective structure with strong wizarding-world after-the-war worldbuilding.</td>
+      <td>The weakest element is that the fic’s core energy often sits more in casework and politics than in the romance itself.</td>
+      <td>Viktor’s war role is displaced into postwar defense: instead of Horcrux-hunt participation, he fights the instability, radicalization, and violence that survived Voldemort.</td>
+    </tr>
+    <tr>
+      <td>A Year Abroad</td>
+      <td>paigevlindsay</td>
+      <td><a href="https://archiveofourown.org/works/7933567" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/7933567</a></td>
+      <td>Complete</td>
+      <td>146.0</td>
+      <td>Alternate Reality</td>
+      <td>Romance</td>
+      <td>34697.0</td>
+      <td>9.61</td>
+      <td>9.9</td>
+      <td>73.5</td>
+      <td>Hermione is sent to Durmstrang in a student exchange and builds a relationship with Viktor in a foreign setting. The horcruxes are already destroyed before Hermione leaves to Durmstrang.</td>
+      <td>Strong cultural/worldbuilding and relationship growth.</td>
+      <td>War stakes feel distant and less impactful.</td>
+      <td>War is background; not central to plot.</td>
+    </tr>
+    <tr>
+      <td>Until Tomorrow</td>
+      <td>Ivy_Clarke</td>
+      <td><a href="https://archiveofourown.org/works/41834889" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/41834889</a></td>
+      <td>WIP</td>
+      <td>110.0</td>
+      <td>Canon-div</td>
+      <td>Romance</td>
+      <td>44624.0</td>
+      <td>3.55</td>
+      <td>33.368</td>
+      <td>73.2</td>
+      <td>A GoF reimagining where Hermione falls for Viktor while juggling house-elf activism, friendship crises, dark magic, and mystery.</td>
+      <td>The balance between romance and mystery inside a recognizably GoF framework.</td>
+      <td>Bcaused the work is still incomplete, its full larger-war payoff remains unresolved.</td>
+      <td>The war itself is not yet central; this is primarily a fourth-year reworking that sets up a different emotional and plot trajectory before the Voldemort endgame.</td>
+    </tr>
+    <tr>
+      <td>Light to fight the shadows</td>
+      <td>discoXena</td>
+      <td><a href="http://archiveofourown.org/works/30090315" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/30090315</a></td>
+      <td>Complete</td>
+      <td>47.0</td>
+      <td>Intermezzo</td>
+      <td>Romance</td>
+      <td>10247.0</td>
+      <td>5.07</td>
+      <td>5.445</td>
+      <td>72.6</td>
+      <td>During the Horcrux hunt, Hermione and Harry visit Viktor and Hermione and Viktor reconnect while forced into isolation.</td>
+      <td>Strong blend of philosophy and relationship.</td>
+      <td>Limited scale due to isolated setting.</td>
+      <td>Viktor is indirectly involved during the Horcrux hunt.</td>
+    </tr>
+    <tr>
+      <td>Hermione Granger and the silent country</td>
+      <td>Callmesalticidae</td>
+      <td><a href="https://archiveofourown.org/works/27111157" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/27111157</a></td>
+      <td>Complete</td>
+      <td>189.0</td>
+      <td>Alternate Reality</td>
+      <td>Plot</td>
+      <td>55616.0</td>
+      <td>5.41</td>
+      <td>27.918</td>
+      <td>71.5</td>
+      <td>Hermione studies abroad in France in a heavy AU setting with altered canon elements.</td>
+      <td>Expansive AU worldbuilding.</td>
+      <td>The Hermione/Viktor relationship is not always not always the central focus.</td>
+      <td>War elements exist but are seriously restructured in AU.</td>
+    </tr>
+    <tr>
+      <td>doe</td>
+      <td>cementtblock</td>
+      <td><a href="https://archiveofourown.org/works/79114106" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/79114106</a></td>
+      <td>WIP</td>
+      <td>121.0</td>
+      <td>Canon-div</td>
+      <td>Romance</td>
+      <td>8100.0</td>
+      <td>0.16</td>
+      <td>54.0</td>
+      <td>71.3</td>
+      <td>A GoF reinterpretation, focusing on Hermione and Viktor’s early romantic development.</td>
+      <td>Strong emotional and coming-of-age elements.</td>
+      <td>Limited impact on broader narrative stakes.</td>
+      <td>War not yet central.</td>
+    </tr>
+    <tr>
+      <td>To Feel To Fall</td>
+      <td>ReineP</td>
+      <td><a href="https://archiveofourown.org/works/24452869" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/24452869</a></td>
+      <td>WIP</td>
+      <td>80.0</td>
+      <td>Alternate Reality</td>
+      <td>Romance</td>
+      <td>6770.0</td>
+      <td>5.86</td>
+      <td>3.168</td>
+      <td>70.5</td>
+      <td>Starting as early as 1992 and ranging across Hogwarts, Durmstrang, and other international settings, the story explores Hermione’s growth and Viktor’s life with an affliction through expansive worldbuilding that only loosely “plays around canon.”</td>
+      <td>The best element is the international, language-and-culture-heavy worldbuilding around Hermione and Viktor.</td>
+      <td>The weakest element is that the story’s breadth makes it feel less anchored to a specific canon conflict.</td>
+      <td>No clear canon-war solution is central yet; the story is more about formative development, relationships, learning, and Viktor’s personal challenges than the Voldemort war itself.</td>
+    </tr>
+    <tr>
+      <td>The Flower Shop</td>
+      <td>paigevlindsay</td>
+      <td><a href="https://archiveofourown.org/works/7544140" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/7544140</a></td>
+      <td>Complete</td>
+      <td>92.0</td>
+      <td>Postwar</td>
+      <td>Romance</td>
+      <td>22121.0</td>
+      <td>9.72</td>
+      <td>6.2</td>
+      <td>68.8</td>
+      <td>Years after Hogwarts and after the war, Hermione works as a mediwitch in Bulgaria, reconnects with Viktor through the Vratsa Vultures and Blaguna’s flower shop, and rebuilds a love that survived silence, war, and separation.</td>
+      <td>The best element is the gentle postwar reconnection in Bulgaria, especially the emotional role of the flower shop as a place of healing and belonging.</td>
+      <td>The weakest element is that the larger war consequences stay mostly personal and domestic, rather than deeply political or strategic.</td>
+      <td>Viktor did not join Harry’s canon war mission; instead, the war’s role is separation, unanswered letters, and the damage both must live through before finding each other again.</td>
+    </tr>
+    <tr>
+      <td>There'll Never Be Enough of Us</td>
+      <td>MayimOr</td>
+      <td><a href="https://archiveofourown.org/works/60848947" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/60848947</a></td>
+      <td>WIP</td>
+      <td>163.0</td>
+      <td>Canon-div</td>
+      <td>Romance</td>
+      <td>30738.0</td>
+      <td>1.37</td>
+      <td>54.208</td>
+      <td>67.8</td>
+      <td>Hermione and Viktor's library friendship in GoF grows into romance and continues forward through later school years and into Deathly Hallows.</td>
+      <td>The slow emotional accumulation from the Yule Ball era and intimacy onward.</td>
+      <td>As the story is spanning many years, the plot can feel broad and diffuse rather than sharply concentrated.</td>
+      <td>Viktor’s final war role appears to be as Hermione’s continuing partner across the war years, but as this is WIP, the full wartime resolution is still unknown.</td>
+    </tr>
+    <tr>
+      <td>Letter of Survival</td>
+      <td>Buddybee13</td>
+      <td><a href="http://archiveofourown.org/works/56968588" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/56968588</a></td>
+      <td>Complete</td>
+      <td>152.0</td>
+      <td>Postwar</td>
+      <td>Romance</td>
+      <td>37839.0</td>
+      <td>1.78</td>
+      <td>51.216</td>
+      <td>65.6</td>
+      <td>Post-war Hermione seeks refuge with Viktor while dealing with trauma and recovery.</td>
+      <td>Deep trauma exploration and healing arc.</td>
+      <td>Dark themes may be overwhelming.</td>
+      <td>Viktor provides safety and emotional healing.</td>
+    </tr>
+    <tr>
+      <td>To the You of 1994</td>
+      <td>LittleChurro</td>
+      <td><a href="https://archiveofourown.org/works/51945343" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/51945343</a></td>
+      <td>WIP</td>
+      <td>137.0</td>
+      <td>Canon-div</td>
+      <td>Romance</td>
+      <td>19992.0</td>
+      <td>2.36</td>
+      <td>21.808</td>
+      <td>65.4</td>
+      <td>Set in 1994 around the Triwizard Tournament, the fic intensifies the GoF connection with magical bonds, Slavic rituals, dark magic, and a much more mythic and intimate Hermione/Viktor relationship.</td>
+      <td>The ritual-heavy, culturally specific expansion of Viktor’s side of the world.</td>
+      <td>The added dark/ritual mechanics can pull the story a bit away from the cleaner emotional line of GoF.</td>
+      <td>Viktor’s wartime role is not yet in the main point; at this stage he is being positioned as Hermione’s magically significant partner before the later war period.</td>
+    </tr>
+    <tr>
+      <td>Runes and Rituals</td>
+      <td>dyslexic_penquin</td>
+      <td><a href="http://archiveofourown.org/works/20621435" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/20621435</a></td>
+      <td>Complete</td>
+      <td>83.0</td>
+      <td>Postwar</td>
+      <td>Romance</td>
+      <td>59888.0</td>
+      <td>6.58</td>
+      <td>25.0</td>
+      <td>64.4</td>
+      <td>After the war, Hermione returns from years of mastery study and collides with Viktor in a marriage-law plot shaped by ritual magic, old lore, and Ministry politics.</td>
+      <td>The best element is the fusion of postwar reconstruction with the rituals and runes worldbuilding.</td>
+      <td>The weakest element is that the central conflict is driven more by marriage-law mechanics than by wider wizarding-world consequences.</td>
+      <td>Viktor does not fight in the canon war plot here; his main “war solution” role is surviving the aftermath, escaping one marriage law, and becoming part of Hermione’s postwar restructuring of life and magic.</td>
+    </tr>
+    <tr>
+      <td>Alignment – Through the Arch</td>
+      <td>FastNeutrons</td>
+      <td><a href="https://archiveofourown.org/works/73668556" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/73668556</a></td>
+      <td>Complete</td>
+      <td>29.0</td>
+      <td>Alternate Reality</td>
+      <td>Plot</td>
+      <td>755.0</td>
+      <td>0.22</td>
+      <td>5.28</td>
+      <td>64.1</td>
+      <td>Following Cursed Child, Harry confronts alternate timelines through the Veil that once killed Sirius. Harry, Ron and Hermione discover the possible impact of Viktor Krum on the war.</td>
+      <td>The best element is the meta-ethical treatment of alternate timelines and consequences.</td>
+      <td>The weakest element is that Viktor/Hermione is more about tension and history than a central-lived romance.</td>
+      <td>Viktor has no direct active war role in the present timeline; the story is about retrospectively examining alternative timelines where Viktor prevented the Battle of Hogwarts.</td>
+    </tr>
+    <tr>
+      <td>Looks Can Be Deceiving</td>
+      <td>corvusdraconis</td>
+      <td><a href="http://archiveofourown.org/works/3630213" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/3630213</a></td>
+      <td>Complete</td>
+      <td>442.0</td>
+      <td>Canon-div</td>
+      <td>Plot</td>
+      <td>204829.0</td>
+      <td>11.04</td>
+      <td>50.8</td>
+      <td>62.4</td>
+      <td>AU where Snape mentors Hermione, altering her path and relationships, including Viktor.</td>
+      <td>Rich alternate character dynamics.</td>
+      <td>Very long with inconsistent pacing.</td>
+      <td>Viktor participates in the war contextually.</td>
+    </tr>
+    <tr>
+      <td>Finding their way back to love</td>
+      <td>Melissa1226</td>
+      <td><a href="http://archiveofourown.org/works/24098236" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/24098236</a></td>
+      <td>Complete</td>
+      <td>295.0</td>
+      <td>Postwar</td>
+      <td>Romance</td>
+      <td>59926.0</td>
+      <td>5.92</td>
+      <td>27.423</td>
+      <td>60.6</td>
+      <td>After the war, Hermione escapes trauma and reconnects with Viktor, rebuilding their relationship.</td>
+      <td>Intense emotional healing and angst.</td>
+      <td>Plot can feel secondary to drama.</td>
+      <td>Viktor provides refuge and emotional support.</td>
+    </tr>
+    <tr>
+      <td>A Life in Letters</td>
+      <td>articcat621</td>
+      <td><a href="https://archiveofourown.org/works/3402233" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/3402233</a></td>
+      <td>Complete</td>
+      <td>4.0</td>
+      <td>Canon-div</td>
+      <td>Romance</td>
+      <td>3176.0</td>
+      <td>11.14</td>
+      <td>0.8</td>
+      <td>59.6</td>
+      <td>Hermione Granger and Viktor Krum maintain a relationship after the Triwizard Tournament. The story is told in the form of letters.</td>
+      <td>Intimate epistolary format, that enhances the emotional depth.</td>
+      <td>Limited scope and minimal broader plot impact.</td>
+      <td>No direct war involvement; mostly pre-war emotional buildup.</td>
+    </tr>
+    <tr>
+      <td>Metanoia</td>
+      <td>FinnDecananas</td>
+      <td><a href="http://archiveofourown.org/works/14504901" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/14504901</a></td>
+      <td>Complete</td>
+      <td>82.0</td>
+      <td>Postwar</td>
+      <td>Plot</td>
+      <td>34182.0</td>
+      <td>5.39</td>
+      <td>17.226</td>
+      <td>56.0</td>
+      <td>Post-war story focusing on healing, relationships, and a concurrent mystery plot.</td>
+      <td>Balanced healing and mystery elements.</td>
+      <td>Hermione/Viktor is not always the primary focus.</td>
+      <td>Viktor supports in post-war recovery phase.</td>
+    </tr>
+    <tr>
+      <td>But Daddy I Love Him</td>
+      <td>PoppiesGrowOnVenus</td>
+      <td><a href="https://archiveofourown.org/works/64982152" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/64982152</a></td>
+      <td>WIP</td>
+      <td>88.0</td>
+      <td>Canon-div</td>
+      <td>Romance</td>
+      <td>5269.0</td>
+      <td>0.96</td>
+      <td>11.778</td>
+      <td>52.3</td>
+      <td>AU retelling of GoF events with a more rebellious Hermione and intensified relationship.</td>
+      <td>Fun character reinterpretation and dynamic chemistry.</td>
+      <td>Less grounded in serious plot stakes.</td>
+      <td>War not yet central.</td>
+    </tr>
+    <tr>
+      <td>My Love Mine All Mine</td>
+      <td>MayimOr</td>
+      <td><a href="https://archiveofourown.org/works/62240974" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/62240974</a></td>
+      <td>Complete</td>
+      <td>12.0</td>
+      <td>Intermezzo</td>
+      <td>Romance</td>
+      <td>2308.0</td>
+      <td>1.23</td>
+      <td>4.488</td>
+      <td>49.9</td>
+      <td>Short, emotional exploration of Hermione and Viktor’s relationship between HBP and DH.</td>
+      <td>Strong emotional intensity in short form.</td>
+      <td>Limited depth due to its length.</td>
+      <td>The war is mostly background.</td>
+    </tr>
+    <tr>
+      <td>Learning To Dance</td>
+      <td>Bookhound89</td>
+      <td><a href="http://archiveofourown.org/works/5836018" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/5836018</a></td>
+      <td>Complete, but sequal misses</td>
+      <td>143.0</td>
+      <td>Canon-div</td>
+      <td>Romance</td>
+      <td>42057.0</td>
+      <td>10.21</td>
+      <td>11.3</td>
+      <td>48.8</td>
+      <td>Explores a destiny-bound relationship between Hermione and Viktor starting from Hogwarts years. The story ends after GoF and plans on a sequal, but that sequal does not exist.</td>
+      <td>Light tone and relationship focus.</td>
+      <td>Less depth in larger narrative stakes.</td>
+      <td>Viktor remains mostly outside war efforts.</td>
+    </tr>
+    <tr>
+      <td>This Ship has Sailed</td>
+      <td>KrumPuffer</td>
+      <td><a href="https://archiveofourown.org/works/22915336" target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/22915336</a></td>
+      <td>Complete</td>
+      <td>24.0</td>
+      <td>Intermezzo</td>
+      <td>Romance</td>
+      <td>9350.0</td>
+      <td>6.12</td>
+      <td>4.2</td>
+      <td>45.5</td>
+      <td>Hermione visits Viktor in Bulgaria after GoF; the story then stretches across years with letters, interruption, war, and eventually they are reunited.</td>
+      <td>The intensity of the temporary connection and the sense of a love deferred rather than erased.</td>
+      <td>The relationship has little effect on the larger HP plot.</td>
+      <td>Viktor does not join the core war action; instead he waits, writes, remains emotionally tethered to Hermione, and is kept at a distance from her wartime burden.</td>
+    </tr>
+    <tr>
+      <td>Shield and Star</td>
+      <td>LadyLightles</td>
+      <td><a href="http://archiveofourown.org/works/13657671" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/13657671</a></td>
+      <td>Complete, but sequel misses</td>
+      <td>150.0</td>
+      <td>Canon-div</td>
+      <td>Plot</td>
+      <td>76568.0</td>
+      <td>8.16</td>
+      <td>25.7</td>
+      <td>45.4</td>
+      <td>Beginning between third and fourth year, Hermione gets a “unique educational opportunity,” uncovers Dumbledore as an active threat, and becomes part of a much more strategic anti-Dumbledore / anti-manipulation fourth-year storyline around the Triwizard setup. It is part of a series, but the sequel misses.</td>
+      <td>The high-stakes conspiracy plot: Hermione’s altered education has immediate political and magical consequences.</td>
+      <td>The Vikmione relationship is mostly a setup rather than a fully developed romance.</td>
+      <td>Viktor is already integrated into the resistance-side strategy before the war fully unfolds; he helps protect Harry and Hermione and is part of the group countering Dumbledore’s manipulation.</td>
+    </tr>
+    <tr>
+      <td>Love Me Like You Do</td>
+      <td>badluckvixen13 (fanaticmusings)</td>
+      <td><a href="https://archiveofourown.org/works/9362093." target="_blank" rel="noopener noreferrer">https://archiveofourown.org/works/9362093.</a></td>
+      <td>Complete</td>
+      <td>144.0</td>
+      <td>Alternate Reality</td>
+      <td>Romance</td>
+      <td>40283.0</td>
+      <td>9.18</td>
+      <td>12.0</td>
+      <td>42.3</td>
+      <td>Soulmate AU with magical traditions, politics, and a complex Hermione/Viktor bond. Marriage law, soulmates, past lives, and a heavily reworked magical-social framework place it well outside a GoF-continuation or postwar-healing structure.</td>
+      <td>Creative AU concepts (soulmates, mythology).</td>
+      <td>Can feel disconnected from canon stakes.</td>
+      <td>War not central; more political/social conflicts.</td>
+    </tr>
+    <tr>
+      <td>Flower of the North</td>
+      <td>Buddybee13</td>
+      <td><a href="http://archiveofourown.org/works/41745237" target="_blank" rel="noopener noreferrer">http://archiveofourown.org/works/41745237</a></td>
+      <td>Complete</td>
+      <td>108.0</td>
+      <td>Alternate Reality</td>
+      <td>Plot</td>
+      <td>54743.0</td>
+      <td>3.56</td>
+      <td>40.837</td>
+      <td>34.1</td>
+      <td>Hermione transfers to Durmstrang after Hogwarts closed in CoS. Dark AU with Durmstrang elements, magic, and a more dangerous version of both characters.</td>
+      <td>Unique dark tone and powerful characterizations.</td>
+      <td>Heavy themes may overshadow romance.</td>
+      <td>Viktor is involved in darker, war-adjacent conflicts.</td>
+    </tr>
+  </tbody>
+</table>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+    const table = $('#ficTable');
+
+    const dataTable = table.DataTable({
+      paging: true,
+      pageLength: -1,
+      lengthMenu: [[-1, 10, 25, 50, 100], ["All", 10, 25, 50, 100]],
+      searching: true,
+      ordering: true,
+      info: true,
+      autoWidth: false,
+      scrollX: true,
+      orderCellsTop: true
+    });
+
+    const vikmioneTypeColIdx = 5;
+
+    $.fn.dataTable.ext.search.push(function(settings, data) {
+      if (settings.nTable.id !== 'ficTable') return true;
+
+      const selected = $('#vikmione-type-filter').val();
+
+      // niets geselecteerd → alles tonen
+      if (!selected || selected.length === 0) {
+        return true;
+      }
+
+      // ALS "All" gekozen → alles tonen
+      if (selected.includes("__ALL__")) {
+        return true;
+      }
+
+      const value = (data[5] || '').toString().trim();
+      return selected.includes(value);
+    });
+
+    $('#vikmione-type-filter').on('change', function() {
+      dataTable.draw();
+    });
+
+    const focusColIdx = 6;
+
+    $.fn.dataTable.ext.search.push(function(settings, data) {
+      if (settings.nTable.id !== 'ficTable') return true;
+
+      const selected = $('#focus-filter').val();
+
+      // niets geselecteerd → alles tonen
+      if (!selected || selected.length === 0) {
+        return true;
+      }
+
+      // ALS "All" gekozen → alles tonen
+      if (selected.includes("__ALL__")) {
+        return true;
+      }
+
+      const value = (data[focusColIdx] || '').toString().trim();
+      return selected.includes(value);
+    });
+
+    $('#focus-filter').on('change', function() {
+      dataTable.draw();
+    });
+  });
+</script>
+</body>
+</html>
