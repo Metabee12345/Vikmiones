@@ -361,7 +361,7 @@ Now, what we must do is incorporate D in the total in such a way that stories wi
 
 As such, we calculate the total score as:
 
-*T = (1-alpha)*avg(A,B,C) + alpha*min(A,B,C,D)*
+*T = (1-alpha) $\times$ avg(A,B,C) + alpha $\times$ min(A,B,C,D)*
 
 We incorporate D in the min, but not the average, so that axes are not counted double. This means a forgiving judge will look past overengineering, but a strict judge will not. Next, we measure the score drift with respect to the judge as:
 
