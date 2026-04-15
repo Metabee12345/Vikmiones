@@ -17,7 +17,8 @@ NAV_LINKS = [
 ]
 
 def recommendation_cell(title: str, url: str) -> str:
-    safe_title = html.escape(title)
+    # safe_title = html.escape(title)
+    safe_title = title
     safe_url = html.escape(url, quote=True)
 
     return (
@@ -35,7 +36,7 @@ def build_dataframe() -> pd.DataFrame:
             "Description": "dsgdagd",
             "Recommendation": recommendation_cell(
                 "Air - Calebski",
-                "https://archiveofourown.org/works/11461545",
+                "http://archiveofourown.org/works/18766738",
             ),
             "Explanation": "fdgdfsgdf",
         },
@@ -43,8 +44,8 @@ def build_dataframe() -> pd.DataFrame:
             "Type": "Canon-div / Plot",
             "Description": "",
             "Recommendation": recommendation_cell(
-                "To the You of 1994",
-                "https://archiveofourown.org/works/51945343",
+                "Alignment - FastNeutrons",
+                "https://archiveofourown.org/works/73628601",
             ),
             "Explanation": "",
         },
@@ -52,8 +53,8 @@ def build_dataframe() -> pd.DataFrame:
             "Type": "Postwar / Romance",
             "Description": "",
             "Recommendation": recommendation_cell(
-                "The Flower Shop",
-                "https://archiveofourown.org/works/7544140",
+                "All the Names of Waiting - MayimOr",
+                "https://archiveofourown.org/works/70894036",
             ),
             "Explanation": "",
         },
@@ -61,8 +62,8 @@ def build_dataframe() -> pd.DataFrame:
             "Type": "Postwar / Plot",
             "Description": "",
             "Recommendation": recommendation_cell(
-                "The Observer Effect",
-                "https://archiveofourown.org/works/32711164",
+                "Debts of Honor - sareliz",
+                "http://archiveofourown.org/works/23132749",
             ),
             "Explanation": "",
         },
@@ -70,8 +71,8 @@ def build_dataframe() -> pd.DataFrame:
             "Type": "Intermezzo",
             "Description": "",
             "Recommendation": recommendation_cell(
-                "Hunting Shadows",
-                "https://archiveofourown.org/works/23468659",
+                "Hunting Shadows - TangentiaLives",
+                "http://archiveofourown.org/works/23468659",
             ),
             "Explanation": "",
         },
@@ -79,8 +80,8 @@ def build_dataframe() -> pd.DataFrame:
             "Type": "Alternate Reality / Romance",
             "Description": "",
             "Recommendation": recommendation_cell(
-                "Love Me Like You Do",
-                "https://archiveofourown.org/works/9362093",
+                "A Year Abroad - paigevlindsay",
+                "https://archiveofourown.org/works/7933567",
             ),
             "Explanation": "",
         },
@@ -88,8 +89,8 @@ def build_dataframe() -> pd.DataFrame:
             "Type": "Alternate Reality / Plot",
             "Description": "",
             "Recommendation": recommendation_cell(
-                "Flower of the North",
-                "https://archiveofourown.org/works/41745237",
+                "Hermione Granger and the silent country </br> - Callmesalticidae",
+                "https://archiveofourown.org/works/27111157",
             ),
             "Explanation": "",
         },
