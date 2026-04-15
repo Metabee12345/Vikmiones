@@ -5,7 +5,7 @@ from pathlib import Path
 
 import markdown
 
-INPUT_FILE = "../Rubric/README.md"
+INPUT_FILE = "../Rubric/Rubric.md"
 OUTPUT_FILE = "../Rubric/index.html"
 PAGE_TITLE = "Rubric"
 CURRENT_NAV = "Rubric"
