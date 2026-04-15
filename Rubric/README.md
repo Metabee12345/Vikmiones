@@ -15,19 +15,19 @@ We aim for a rubric that is reproducible, defendable and (hopefully) discriminat
 ### A) General Storytelling (Is this a good story?)
 
 * Psychological Credibility (Characters behave realistically)
-* Narrative Quality (plot content & arcs)
+* Narrative Quality (Plot content & arcs)
 * Style Quality (Writing skills & language)
 * Theme Quality (Strong message to the reader)
 
 ### B) Harry Potter Framework (Is this Harry Potter?)
-* Consistence of Characters (main canonical characters act canonical)
-* Worldbuilding (magic & environment extends canon, not contradicts it)
+* Consistence of Characters (Do main canonical characters act canonical)
+* Worldbuilding (Magic & environment extends canon, not contradicts it)
 
 ### C) Ship dynamics (Is this a good ship?)
-* Romance (ship dynamics are realistic)
-* Originality (ship dynamics are fresh/original & ship-specific)
-* Viktor Krum (character extrapolation is well-rounded)
-* Integration (ship, world & plot interact, they are not separate)
+* Romance (Ship dynamics are realistic)
+* Originality (Ship dynamics are fresh/original & ship-specific)
+* Viktor Krum (Character extrapolation is well-rounded)
+* Integration (Ship, world & plot interact, they are not separate)
 
 # Specification of individual axis:
 
