@@ -272,7 +272,9 @@ NB: A dynamic that is emotionally strong and believable but would still work lar
 
 ## 10) Integration
 **Name:** Integration
+
 **Main Issue:** How does the story connect plot, main romance and worldbuilding? Are they separate? Exist plot & romance side-by-side with respect to a magical décor? Or do relationship dynamics, plot & worldbuilding form a structural interdependent system where a change in one of them leads to (massive) responses in the others?
+
 **Details:** Note that this category is very different from anything we had before. Worldbuilding measures the intrinsic quality of the aspect. Romance and Originality measure the intrinsic ship quality. Narrative Quality measures the intrinsic plot quality. But each of these 3 aspects things can score very high on its own intrinsic quality while having little to do with each other and, therefore, the story scores low on integration. On the other hand, a story can also have a simple ship, worldbuilding and plot while the 3 aspects do continuously interact. So, here we focus on the following questions:
 
 - Is worldbuilding incorporated in the relationship dynamics? Does the main relationship (strongly) respond to changes in environment and the possibility of utilizing new magic? Does this lead to new challenges, conflicts or resolutions/pay-offs in the relationship?
