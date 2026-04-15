@@ -389,11 +389,3 @@ However, the Viktor Krum axis and the Integration axis as main evaluation tools 
 Viktor Krum should be replaced with an axis judging extrapolation of the relevant character, if this is an OC or underused canonical character, like Draco Malfoy. However, this does require a complete redesign of the axis. A Viktor extrapolation should consider aspects like fame, culture, skills & flaws, etc. But a Draco-extrapolation should focus more on the impact of Draco growing up in a death eater family for example. And on how to integrate his Slytherin traits in a fully rounded character without assigning him unrealistic extra skills. Canon, for example, strongly suggests that his exam results are similar to Harry’s, so he cannot be academically brilliant. For characters with a solid canonical basis like Ron, Harry or Snape, the axis should simply be dropped (giving C 3 axis instead of 4).
 
 Integration should be replaced with an axis measuring the specific challenge of the relevant ship(s). Integration between worldbuilding, plot and ship, is less important for Dramione for example, but the enemy-to-lover arc is. Hence, we need an axis to measure this. This would be the same concept-integration, but between relationship dynamics & emotional development axis, not relation/plot/worldbuilding. Same for Ron. For Harry, one would measure integration between relationship dynamics and social structures (how do the Weasleys react to harmony and how does this affect Harry and Hermione’s social networks in the magical world). For Snape, one would measure something with power imbalances & toxicity.
-
-NB: 100% discrimination-free never exists. The rubric does favour, for example:
-* Fantasy should have worldbuilding
-* Clear theme transfer
-* No HP canon contradictions
-* Vikmione-specific integration matters
-
-These are all defensible choices. But they are normative design choices. We have to admit that. We aim for 100% discrimination-free but this is a utopia. We attempted to approximate it as much as possible, but only within the intended scope.
