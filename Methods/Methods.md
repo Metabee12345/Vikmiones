@@ -1,10 +1,43 @@
 # Analysis Methods
 
-Here we describe our full analysis procedure.
+The purpose of this investigation is to determine whether it is possible to **measure quality of a story in an unbiased and reproducible way.**
+
+Rubric analysis is a well-known evalution method for large bodies of text. It basically means that you define seperate categories/themes/topics to evaluate the text (the so-called rubric-axes) and score the text on each category. To guide the scoring process, quantitative scores are accomapied by arguments that state what awards a certain score (the so-called descriptors). If you are interested. If you are inetersted, you can find more about rubric scroing methods here:
+
+* [https://vu.nl/en/employee/didactics/how-to-develop-a-rubric](https://vu.nl/en/employee/didactics/how-to-develop-a-rubric)
+* [https://en.wikipedia.org/wiki/Rubric_(academic)](https://en.wikipedia.org/wiki/Rubric (academic))
+* [https://smowl.net/en/blog/assessment-rubrics/](https://smowl.net/en/blog/assessment-rubrics/)
+
+The scope of our analysis are serious Hermione/Viktor Harry Potter fanfictions (so-called vikmiones), meaning:
+
+* The story is a Harry Potter Fanfiction.
+* One of the main focus points in the story is the Hermione/Viktor relationship.
+* Hermione/Viktor is one of the endgame pairings.
+* The story contains meaningful narrative content (explicit scenes are not the main purpose of the text).
+
+You can find the rubric that was used for this narrative scope [here](https://metabee12345.github.io/Vikmiones/Rubric/). The rubric has been tuned to the scope, but formulations and criteria have been specifically formulated in a way to only judge the quality of execution of the work; not to punish any creative choices on plot, characterizations, worldbuilding, etc. As such, the rubric is aiming to be *discrimination-free* within the scope.
+
+Next, a suitable portion of vikmione has to be selected, and the rubric has to be applied to each of them. This is done with generative AI (we used ChatGPT, with GPT-5.3). It is no certainty that an AI reader is able to judge a story better then a human reader, but an AI evaluation will be more unbiased and reproducible. This is why AI was chosen as the rubric evaluation method. Finally, the results were interpreted using statistical analysis. Read below about the details on each of the different steps.
 
 # Dataset selection
 
-The following procedure was used to determine which vikmione stories were analysed.
+Vikmione stories were selected from [AO3](https://archiveofourown.org/), one of the largest sites to host fanfiction in the world. However, it also has a detailed tag-system on relationships, characters, and other story elements that allow us to easily and effectively sweep the site content, and a standarized PDF-export. The PDF-export is an important feature, as AI-readers are heavily influenced by the format and structure of the documents offered. By using a standarized PDF-export for each investigated story, this type of bias can be effectively eliminated from the story.
+
+You can use the AO3 tag-system to search for vikmione stories [here](https://archiveofourown.org/tags/Hermione%20Granger*s*Viktor%20Krum/works). In this analysis, we did **not consider** vikmiones from another source then AO3 (because those document formats are different). We sampled the site at **date 9th of APril 2026**.
+
+We used the following criteria to reduce the set of [all vikmiones on AO3](https://archiveofourown.org/tags/Hermione%20Granger*s*Viktor%20Krum/works) to a workable scope of 'serious' stories:
+* Select *Harry Potter - J. K. Rowling* as the only fandom, and **exclude** cross-overs.
+* Select *Language: English* This is the largest portion of available languages, and we wish to eliminate biases in the analysis due to different languages.
+* Select *Wordcount: >=50k* The number of 50k words is fairly aribtrary, but the purpose of this filter is to distuingish one-shots and short-stories from longer ones.
+* *Exclude other Hermione relationships*: (mostly)
+    - Hermione Granger/Draco Malfoy
+    - Hermione Granger/Ron Weasley
+    - Hermione Granger/Harry Potter
+    - Hermione Granger/Severus Snape
+    - Hermione Granger/Charlie Weasley
+    - Hermione Granger/Fred Weasley
+    - Hermione Granger/George Weasley
+* Manual read of tags & Summaries
 
 # Evaluation Pipeline
 
@@ -33,3 +66,7 @@ To apply the rubric to the Vikmione stories, the following procedure was used:
 But note that this is no guarantee. One still must carefully read the justifications and scores and then determine whether this sounds reasonable. As such, Canon-Consistency is simple less reproducible with LLMs then the other axes.
 
 * Theme Quality measures reader impression, which simple fluctuates a bit more then the other axes in its evaluation. But the pipeline can be used. There is simple more fluctuation, not a systematic bias, as is the case with canon Consistency.
+
+# Statistical Analysis
+
+Still have to develop this.

@@ -30,7 +30,7 @@ We aim for a rubric that is reproducible, defendable and (hopefully) discriminat
 * Viktor Krum (Character extrapolation is well-rounded)
 * Integration (Ship, world & plot interact, they are not separate)
 
-# Specification of individual axis:
+# Specification of individual axis
 
 ## 1) Consistence of Characters
 **Name:** Consistence of Characters
