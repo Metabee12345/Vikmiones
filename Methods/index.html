@@ -165,9 +165,38 @@
   <nav class="top-nav"><a href="https://metabee12345.github.io/Vikmiones/">Recommendations</a><a href="https://metabee12345.github.io/Vikmiones/Results/">Results</a><a href="https://metabee12345.github.io/Vikmiones/Methods/" class="active">Methods</a><a href="https://metabee12345.github.io/Vikmiones/Rubric/">Rubric</a><a href="https://metabee12345.github.io/Vikmiones/RawData/">Raw Data</a><a href="https://metabee12345.github.io/Vikmiones/Discussion/">Discussion</a></nav>
   <div id="page-content">
     <h1 id="analysis-methods">Analysis Methods</h1>
-<p>Here we describe our full analysis procedure.</p>
+<p>The purpose of this investigation is to determine whether it is possible to <strong>measure quality of a story in an unbiased and reproducible way.</strong></p>
+<p>Rubric analysis is a well-known evalution method for large bodies of text. It basically means that you define seperate categories/themes/topics to evaluate the text (the so-called rubric-axes) and score the text on each category. To guide the scoring process, quantitative scores are accomapied by arguments that state what awards a certain score (the so-called descriptors). If you are interested. If you are inetersted, you can find more about rubric scroing methods here:</p>
+<ul>
+<li><a href="https://vu.nl/en/employee/didactics/how-to-develop-a-rubric">https://vu.nl/en/employee/didactics/how-to-develop-a-rubric</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Rubric (academic)">https://en.wikipedia.org/wiki/Rubric_(academic)</a></li>
+<li><a href="https://smowl.net/en/blog/assessment-rubrics/">https://smowl.net/en/blog/assessment-rubrics/</a></li>
+</ul>
+<p>The scope of our analysis are serious Hermione/Viktor Harry Potter fanfictions (so-called vikmiones), meaning:</p>
+<ul>
+<li>The story is a Harry Potter Fanfiction.</li>
+<li>One of the main focus points in the story is the Hermione/Viktor relationship.</li>
+<li>Hermione/Viktor is one of the endgame pairings.</li>
+<li>The story contains meaningful narrative content (explicit scenes are not the main purpose of the text).</li>
+</ul>
+<p>You can find the rubric that was used for this narrative scope <a href="https://metabee12345.github.io/Vikmiones/Rubric/">here</a>. The rubric has been tuned to the scope, but formulations and criteria have been specifically formulated in a way to only judge the quality of execution of the work; not to punish any creative choices on plot, characterizations, worldbuilding, etc. As such, the rubric is aiming to be <em>discrimination-free</em> within the scope.</p>
+<p>Next, a suitable portion of vikmione has to be selected, and the rubric has to be applied to each of them. This is done with generative AI (we used ChatGPT, with GPT-5.3). It is no certainty that an AI reader is able to judge a story better then a human reader, but an AI evaluation will be more unbiased and reproducible. This is why AI was chosen as the rubric evaluation method. Finally, the results were interpreted using statistical analysis. Read below about the details on each of the different steps.</p>
 <h1 id="dataset-selection">Dataset selection</h1>
-<p>The following procedure was used to determine which vikmione stories were analysed.</p>
+<p>Vikmione stories were selected from <a href="https://archiveofourown.org/">AO3</a>, one of the largest sites to host fanfiction in the world. However, it also has a detailed tag-system on relationships, characters, and other story elements that allow us to easily and effectively sweep the site content, and a standarized PDF-export. The PDF-export is an important feature, as AI-readers are heavily influenced by the format and structure of the documents offered. By using a standarized PDF-export for each investigated story, this type of bias can be effectively eliminated from the story.</p>
+<p>You can use the AO3 tag-system to search for vikmione stories <a href="https://archiveofourown.org/tags/Hermione%20Granger*s*Viktor%20Krum/works">here</a>. In this analysis, we did <strong>not consider</strong> vikmiones from another source then AO3 (because those document formats are different). We sampled the site at <strong>date 9th of APril 2026</strong>.</p>
+<p>We used the following criteria to reduce the set of <a href="https://archiveofourown.org/tags/Hermione%20Granger*s*Viktor%20Krum/works">all vikmiones on AO3</a> to a workable scope of 'serious' stories:
+* Select <em>Harry Potter - J. K. Rowling</em> as the only fandom, and <strong>exclude</strong> cross-overs.
+* Select <em>Language: English</em> This is the largest portion of available languages, and we wish to eliminate biases in the analysis due to different languages.
+* Select <em>Wordcount: &gt;=50k</em> The number of 50k words is fairly aribtrary, but the purpose of this filter is to distuingish one-shots and short-stories from longer ones.
+* <em>Exclude other Hermione relationships</em>: (mostly)
+    - Hermione Granger/Draco Malfoy
+    - Hermione Granger/Ron Weasley
+    - Hermione Granger/Harry Potter
+    - Hermione Granger/Severus Snape
+    - Hermione Granger/Charlie Weasley
+    - Hermione Granger/Fred Weasley
+    - Hermione Granger/George Weasley
+* Manual read of tags &amp; Summaries</p>
 <h1 id="evaluation-pipeline">Evaluation Pipeline</h1>
 <p>To apply the rubric to the Vikmione stories, the following procedure was used:</p>
 <ul>
@@ -194,6 +223,8 @@
 <ul>
 <li>Theme Quality measures reader impression, which simple fluctuates a bit more then the other axes in its evaluation. But the pipeline can be used. There is simple more fluctuation, not a systematic bias, as is the case with canon Consistency.</li>
 </ul>
+<h1 id="statistical-analysis">Statistical Analysis</h1>
+<p>Still have to develop this.</p>
   </div>
 
   <script>
