@@ -40,25 +40,6 @@ We used the following criteria to reduce the set of [all vikmiones on AO3](https
     - Hermione Granger/Fred Weasley
     - Hermione Granger/George Weasley
 
-On the **9th of April 2026**, the total collection of [Hermione/Viktor stories]https://archiveofourown.org/tags/Hermione%20Granger*s*Viktor%20Krum/works) was 1716 works. The above selection steps reduced this to 122 works. See the definition of the vikmione scope above. usually, when Hermione/Viktor is combined in a story with another Hermione-pairing, the Hermione/Viktor-pairing is not endgame. This is not a hard-enforced rule, but a very strong pattern. Hence, together with the wordcount-filter (longer fics with meaningful narrative content), crossover-filter (our scope is pure Harry Potter) and
-
-* Manual read of tags & Summaries
-
-# Evaluation Pipeline
-
-To apply the rubric to the Vikmione stories, the following procedure was used:
-
-* Choose a standard AI-tool and LLM for the evaluation (We used ChatGPT with GPT-5.3)
-* Choose a standard document format for all stories, to counteract AI sensitivity to document format. For example: the AO3 PDF export.
-* Switch off memory functions and cross-chat functions
-* Open a fresh empty chat
-* Load a **single** rubric axis into the first prompt; Terminate the model response immediately after the rubric axis has been acknowledged.
-* Into the second prompt, load as many PDF documents as permitted by the models features (in our case the limit was 20).
-* Add the following prompt text:
-
-*Score all supplied PDFs against the above evaluation model. Briefly argue each score using the source material. Rely solely on the descriptors for calibration of the scoring scale. Do not compare between the stories at all. We want independent and non-relative scores. NB: use only the narrative body text. Do NOT use or infer information from: Tags, Author Notes, Summary, Chapter Titles, or other metadata of any kind. If such elements are present in the text, ignore them entirely.*
-
-* Repeat the process for all stories under consideration, and for all 10 rubric axis. NB: **Use new chats every time, at least when switching rubric axis!**
 * Scores for each axis were aggregated manually into a total score (see the [rubric]((https://metabee12345.github.io/Vikmiones/Rubric/)) for the exact rules).
 * The first outcome of the LLM is final, do not supply any additional questions/context to steer the evaluation, as these biases the scoring between stories.
 
@@ -74,4 +55,17 @@ But note that this is no guarantee. One still must carefully read the justificat
 
 # Statistical Analysis
 
-Still have to develop this.
+All stories in the [dataset](https://metabee12345.github.io/Vikmiones/Results/) were evaluated twice (independently) for each [rubric axis](https://metabee12345.github.io/Vikmiones/Rubric/) using the above procedure. Afterwards, a total score was assigned for each evaluation separatly (procedure is described ([here](https://metabee12345.github.io/Vikmiones/Rubric/)). Next, the data was combined with various metadata-fields from [AO3](https://archiveofourown.org/), such as completion status, wordcount, number of hits/kudos/comments, etc. Generative AI was also used to provide content-overviews such as a plot summary, strongest and weakest aspect of the story, and Viktor Krum's role in second wizard-war. The resulting data-table can be viewed [here](https://metabee12345.github.io/Vikmiones/Results/).
+
+The results were further analysed using the following statistical methods:
+
+* [Cronbach's alpha](https://en.wikipedia.org/wiki/Cronbach%27s_alpha), which was calculated for each of the two evaluations, to measure the internal consistency of the rubric. This is common is scientific studies, see [here](https://www.sciencedirect.com/science/article/abs/pii/S1747938X07000188) and [here](https://nmji.in/development-of-an-analytical-rubric-and-estimation-of-its-validity-and-inter-rater-reliability-for-assessing-reflective-narrations/) for examples.
+
+* [Spearman correlation](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient), which was calculated to investigate the stability of the quality-ranking by the rubric (see [this paper](https://www.sciencedirect.com/science/article/abs/pii/S1747938X07000188) for more background information). Both evaluations were aggregated into their own total score, providing a ranking of the stories in the dataset. These two rankings were compared to generate the Spearman correlation coefficient. As tie-breaks, the score drift was used (low drift is better, see our
+[rubric](https://metabee12345.github.io/Vikmiones/Rubric/)).
+
+* Mean Relative Deviation (MRD), which was calculated to investigate the stability of the absolute scores of the rubric. For the total score T of a story, we computed 2*abs(T1-T2)/(T1+T2). Then, we took the average over all 30 stories of this number, to see how much absolute scores can deviate between evaulation runs.
+
+* [Correlation study](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient) between the popularity of a story and the rubric score of a story.
+
+Still have to explain popularity calculation & correlation methods.
