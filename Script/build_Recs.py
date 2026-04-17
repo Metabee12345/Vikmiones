@@ -32,71 +32,112 @@ def recommendation_cell(title: str, url: str) -> str:
 def build_dataframe() -> pd.DataFrame:
     rows = [
         {
-            "Type": "Canon-div / Romance",
-            "Description": "dsgdagd",
-            "Recommendation": recommendation_cell(
-                "Air - Calebski",
-                "http://archiveofourown.org/works/18766738",
-            ),
-            "Explanation": "fdgdfsgdf",
-        },
-        {
-            "Type": "Canon-div / Plot",
-            "Description": "",
+            "sort_order": 1,
+            "Type": "Canon-Divergence / <br> Plot-focus",
+            "Description": '<strong class="smallfattext">Hermione and Viktor meet during or slightly before GoF</strong>. <br>'+
+                           "We see how events unfold when they stay together. <br>"+
+                           "There is a good romance, but the main focus is on how <br>"+
+                           "Hermione's romantic choice affects the war and larger HP-plot.",
             "Recommendation": recommendation_cell(
                 "Alignment - FastNeutrons",
                 "https://archiveofourown.org/works/73628601",
             ),
-            "Explanation": "",
+            "Explanation": '<strong class="smallfattext">The one single canon-divergence vikmione in the dataset that is truely complete </strong> (covering full GoF-DH). It also holds the single highest <br>'+
+                           "Quality score of the entire dataset. Other complete canon-divergences either miss their sequel after GoF, or are not vikmione-centric. <br>"+
+                           "Looks can be Deceiving, for example, is a magnificent work. But it is a canon-divergence with a vikmione-endgame. It is not <br>"+
+                           "a true vikmione-centric canon-divergence, unlike Alignment.",
         },
         {
-            "Type": "Postwar / Romance",
-            "Description": "",
+            "sort_order": 2,
+            "Type": "Canon-Divergence / <br> Romance-focus",
+            "Description": '<strong class="smallfattext">Hermione and Viktor meet during or slightly before GoF</strong>. <br>'+
+                           "We see how events unfold when they stay together. <br>"+
+                           "Effects on the larger HP plot are present, but the main <br>"+
+                           "focus is on the development of the relationship.",
             "Recommendation": recommendation_cell(
-                "All the Names of Waiting - MayimOr",
-                "https://archiveofourown.org/works/70894036",
+                "Air - Calebski",
+                "http://archiveofourown.org/works/18766738",
             ),
-            "Explanation": "",
+            "Explanation": '<strong class="smallfattext">An iconic work, and without a doubt the best romance-oriented canon-divergence for Hermione/Viktor</strong>. Both its quality score and <br>'+
+            "absolute number of hits are at the top of it's category. Another big advantage is that the story continues to the end of Ootp, which is further <br>"+
+            "into the HP-plot than any other romance-oriented canon-divergence in the dataset. It is still WIP, but our dataset does not contain Complete <br>"+
+            "works in this category other then 'A life in Letters', which is not a longfic.",
         },
         {
-            "Type": "Postwar / Plot",
-            "Description": "",
+            "sort_order": 3,
+            "Type": "Post-War / <br> Plot-focus",
+            "Description": '<strong class="smallfattext">Hermione and Viktor reconnect after Voldemort is defeated</strong>, <br>'+
+                           "usually connected to themes like trauma, safety and healing. <br>"+
+                           "There is a good romance, but the main focus is on how <br>"+
+                           "Hermione's choices affects the larger wizarding world.",
             "Recommendation": recommendation_cell(
                 "Debts of Honor - sareliz",
                 "http://archiveofourown.org/works/23132749",
             ),
-            "Explanation": "",
+            "Explanation": '<strong class="smallfattext">An iconic work, by far the highest Quality score of all plot/postwar works</strong>, and the second-ranked work in the database in absolute <br>'+
+                           "number of hits. There is a massive plot and a beautiful romance about healing after the war with Voldemort. It is WIP, but it stops <br>"+
+                           "at a very natural point, so that it could be considered finished."
         },
         {
+            "sort_order": 4,
+            "Type": "Post-War / <br> Romance-focus",
+            "Description": '<strong class="smallfattext">Hermione and Viktor reconnect after Voldemort is defeated</strong>. <br>'+
+                           "Effects on the larger world are present, but the main <br>"+
+                           "focus is on the development of the relationship, <br>"+
+                           "usually connected to themes like trauma, safety and healing.",
+            "Recommendation": recommendation_cell(
+                "All the Names of Waiting - MayimOr",
+                "https://archiveofourown.org/works/70894036",
+            ),
+            "Explanation": '<strong class="smallfattext">This is a truely hidden gem.</strong> By far the highest Quality score of all romance/postwar works. It covers both GoF and Hermione and <br>'+
+                            "Viktor's reunification as adults after the war. The relationship dynamics feel truely authentic like no other and Viktor growing <br>"+
+                            "up in communistic Bulgaria provides a unique angle. It is still WIP, but frequently updated."
+        },
+        {
+            "sort_order": 5,
             "Type": "Intermezzo",
-            "Description": "",
+            "Description": '<strong class="smallfattext"> A story that can be inserted </strong> into the canonical <br>'+
+                           "HP-plot without breaking or changing it. Usually spanning <br>"+
+                           "a limited amount of time and romance-focussed.",
             "Recommendation": recommendation_cell(
                 "Hunting Shadows - TangentiaLives",
                 "http://archiveofourown.org/works/23468659",
             ),
-            "Explanation": "",
+            "Explanation": '<strong class="smallfattext">A wonderful story about Hermione travelling to Bulgaria between PoS and GoF.</strong> Its quality score is close to Light to fight the shadows, <br>'+
+                           "but it's hits and popularity are way larger, hence the recommendation. It also has a notable plot beyond just romance."
         },
         {
-            "Type": "Alternate Reality / Romance",
-            "Description": "",
-            "Recommendation": recommendation_cell(
-                "A Year Abroad - paigevlindsay",
-                "https://archiveofourown.org/works/7933567",
-            ),
-            "Explanation": "",
-        },
-        {
-            "Type": "Alternate Reality / Plot",
-            "Description": "",
+            "sort_order": 6,
+            "Type": "Alternate Reality / <br> Plot-focus",
+            "Description": '<strong class="smallfattext">Hermione and Viktor meet in a setting that is not <br>'+
+                           "directly related to the canonical main HP-plot</strong>. <br>"+
+                           "There is a good romance, but the main focus is on how <br>"+
+                           "Hermione's romantic choice affects the larger world.",
             "Recommendation": recommendation_cell(
                 "Hermione Granger and the silent country </br> - Callmesalticidae",
                 "https://archiveofourown.org/works/27111157",
             ),
-            "Explanation": "",
+            "Explanation": '<strong class="smallfattext">By far the best Quality score for this type of works</strong> in the database. Alternatives are either quite philosophical, or the characters <br>'+
+                           "and setting no longer feel like the Harry Potter world. Hermione studies at beauxbatons in a heavily altered setting w.r.t. canon."
+        },
+        {
+            "sort_order": 7,
+            "Type": "Alternate Reality / <br> Romance-focus",
+            "Description": '<strong class="smallfattext">Hermione and Viktor meet in a setting that is not <br>'+
+                           "directly related to the canonical main HP-plot</strong>. <br>"+
+                           "Effects on the larger world are present, but the main <br>"+
+                           "focus is on the development of the relationship.",
+            "Recommendation": recommendation_cell(
+                "A Year Abroad - paigevlindsay",
+                "https://archiveofourown.org/works/7933567",
+            ),
+            "Explanation": '<strong class="smallfattext">The top quality score in this category and complete.</strong> The number of these type of works is not very broad in the dataset (only 3). <br>'+
+                           "One has a low Quality score and another is WIP, leaving this one as our recommendation. Hermione travels to Durmstrang as part <br>"+
+                           "of an exchange-program after the war is over. The war and HP-plot have been massively altered to generate space for the exchange-program."
         },
     ]
 
-    return pd.DataFrame(rows, columns=["Type", "Description", "Recommendation", "Explanation"])
+    return pd.DataFrame(rows, columns=["sort_order", "Type", "Description", "Recommendation", "Explanation"])
 
 
 def build_html_table(df: pd.DataFrame) -> str:
@@ -234,7 +275,7 @@ def build_full_page(table_html: str, title: str = "Summary Table", nav_current: 
 
     td.col-type {{
       font-size: 18px !important;
-      font-weight: 500;
+      font-weight: 600;
     }}
 
     td.col-description {{
@@ -271,6 +312,25 @@ def build_full_page(table_html: str, title: str = "Summary Table", nav_current: 
       font-size: 20px;
       font-weight: 700;
     }}
+
+    .introduction {{
+      font-size: 18px;
+      color: #000000;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }}
+
+    .flagtext {{
+      font-size: 18px;
+      color: #000000;
+      font-weight: 400;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }}
+
+    .smallfattext {{
+      font-weight: 700;
+    }}
   </style>
 </head>
 <body>
@@ -280,7 +340,18 @@ def build_full_page(table_html: str, title: str = "Summary Table", nav_current: 
   <h1>{html.escape(title)}</h1>
   </div>
 
+  <div class="introduction">
+  These are the top recommendations by category. Click a title to open the fic, or use the <strong class="smallfattext"><a href="https://metabee12345.github.io/Vikmiones/Results/">Results</a></strong> to browse the full list of fics (filters available).
+  </div>
+
   {table_html}
+
+  <div class="flagtext">
+  All recommendations are based on a <strong class="smallfattext">structured quality <a href="https://metabee12345.github.io/Vikmiones/Rubric/">rubric</a></strong> with high internal consistency (α = 0.85, Spearman = 0.92, MAD = 5.5%).
+  <br>
+  <br>
+  You can browse the full list of all analysed fics <a href="https://metabee12345.github.io/Vikmiones/Results/">here</a>, or read about the <a href="https://metabee12345.github.io/Vikmiones/Methods/">analysis method</a> and <a href="https://metabee12345.github.io/Vikmiones/Discussion/">statistical analysis</a>.
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
@@ -295,15 +366,20 @@ def build_full_page(table_html: str, title: str = "Summary Table", nav_current: 
       lengthMenu: [[-1], ["All"]],
       searching: true,
       ordering: true,
+      order: [[0, "asc"]],
       info: true,
       autoWidth: false,
       scrollX: true,
       orderCellsTop: true,
+      language: {{
+        search: "Search (title, tags, themes):"
+      }},
       columnDefs: [
-        {{ targets: 0, className: "col-type", width: "10%" }},
-        {{ targets: 1, className: "col-description", width: "30%" }},
-        {{ targets: 2, className: "col-recommendation", width: "10%" }},
-        {{ targets: 3, className: "col-explanation", width: "30%" }}
+        {{ targets: 0, visible: false }},
+        {{ targets: 1, className: "col-type", width: "12%" }},
+        {{ targets: 2, className: "col-description", width: "25%" }},
+        {{ targets: 3, className: "col-recommendation", width: "12%" }},
+        {{ targets: 4, className: "col-explanation", width: "51%" }}
       ]
     }});
 
@@ -322,7 +398,7 @@ def main() -> None:
 
     table_html = build_html_table(df)
     page_html = build_full_page(table_html,
-                                title="Hermione/Viktor Harry Potter Fanctions; Best Recommendations",
+                                title="Hermione/Viktor Fic Guide; Best Recommendations & Hidden Gems",
                                 nav_current="")
 
     Path(OUTPUT_FILE).write_text(page_html, encoding="utf-8")
