@@ -202,12 +202,15 @@
 </ul>
 </li>
 </ul>
-<p>On the <strong>9th of April 2026</strong>, the total collection of [Hermione/Viktor stories]https://archiveofourown.org/tags/Hermione%20Granger<em>s</em>Viktor%20Krum/works) was 1716 works. The above selection steps reduced this to 122 works. See the definition of the vikmione scope above. usually, when Hermione/Viktor is combined in a story with another Hermione-pairing, the Hermione/Viktor-pairing is not endgame. This is not a hard-enforced rule, but a very strong pattern. Hence, together with the wordcount-filter (longer fics with meaningful narrative content), crossover-filter (our scope is pure Harry Potter) and</p>
+<p>On the <strong>9th of April 2026</strong>, the total collection of <a href="https://archiveofourown.org/tags/Hermione%20Granger*s*Viktor%20Krum/works">Hermione/Viktor stories</a> was 1716 works. The above selection steps reduced this to 122 works. See the definition of the vikmione scope above. usually, when Hermione/Viktor is combined in a story with another Hermione-pairing, the Hermione/Viktor-pairing is not endgame. This is not a hard-enforced rule, but a very strong pattern. Hence, together with the wordcount-filter (longer fics with meaningful narrative content), crossover-filter (our scope is pure Harry Potter) and the language-filter, this is a reasonable attempt to identify the scope of the analysis.</p>
 <ul>
-<li>Manual read of tags &amp; Summaries</li>
+<li>The second selection-phase, is to manually read the tags &amp; summaries of all stories that pass the above filter (122). This was done to verify whether a story's narrative purpose was indeed a serious vikmione (as defined above), or a story aiming at explicite content and/or romantic triangles involving Viktor Krum, or a story with a totally different scope.</li>
 </ul>
+<p>This reduced the datatset further from 122 stories to 30 stories. The list of these stories can be found <a href="https://metabee12345.github.io/Vikmiones/Results/">here</a>. <strong>These are the stories that comprise the full dataset of our analysis.</strong></p>
+<p>Note that some stories in this dataset do not pass the wordcount-filter. However, they were included because it was known that they match the scope. As such, the above criteria should not be viewed as absolute or justifiable, but as a first-attempt to identify a suitable dataset on <a href="https://archiveofourown.org/">AO3</a> matching our scope.</p>
+<p>Hence, if there are any other stories that you feel should be included in this analysis (because they match the above scope), you are welcome to contribute to this analysis. You can create a pull-request <a href="https://github.com/Metabee12345/Vikmiones">here</a> and suggest additional stories. Provide a clear argumentation as to why the story belongs in the scope, and note that the story <em>must be available</em> on <a href="https://archiveofourown.org/">AO3</a> (this is a hard-requirement), because biases from different document-formats cannot be accepted.</p>
 <h1 id="evaluation-pipeline">Evaluation Pipeline</h1>
-<p>To apply the rubric to the Vikmione stories, the following procedure was used:</p>
+<p>To apply the rubric to the Vikmione stories in our <a href="https://metabee12345.github.io/Vikmiones/Results/">dataset</a>, the following procedure was used:</p>
 <ul>
 <li>Choose a standard AI-tool and LLM for the evaluation (We used ChatGPT with GPT-5.3)</li>
 <li>Choose a standard document format for all stories, to counteract AI sensitivity to document format. For example: the AO3 PDF export.</li>
@@ -220,7 +223,7 @@
 <p><em>Score all supplied PDFs against the above evaluation model. Briefly argue each score using the source material. Rely solely on the descriptors for calibration of the scoring scale. Do not compare between the stories at all. We want independent and non-relative scores. NB: use only the narrative body text. Do NOT use or infer information from: Tags, Author Notes, Summary, Chapter Titles, or other metadata of any kind. If such elements are present in the text, ignore them entirely.</em></p>
 <ul>
 <li>Repeat the process for all stories under consideration, and for all 10 rubric axis. NB: <strong>Use new chats every time, at least when switching rubric axis!</strong></li>
-<li>Scores for each axis were aggregated manually into a total score (see the <a href="(https://metabee12345.github.io/Vikmiones/Rubric/)">rubric</a> for the exact rules).</li>
+<li>Scores for each axis were aggregated manually into a total score (see the <a href="https://metabee12345.github.io/Vikmiones/Rubric/">rubric</a>) for the exact rules).</li>
 <li>The first outcome of the LLM is final, do not supply any additional questions/context to steer the evaluation, as these biases the scoring between stories.</li>
 </ul>
 <p><strong>Irregularities:</strong></p>
@@ -233,7 +236,24 @@
 <li>Theme Quality measures reader impression, which simple fluctuates a bit more then the other axes in its evaluation. But the pipeline can be used. There is simple more fluctuation, not a systematic bias, as is the case with canon Consistency.</li>
 </ul>
 <h1 id="statistical-analysis">Statistical Analysis</h1>
-<p>Still have to develop this.</p>
+<p>All stories in the <a href="https://metabee12345.github.io/Vikmiones/Results/">dataset</a> were evaluated twice (independently) for each <a href="https://metabee12345.github.io/Vikmiones/Rubric/">rubric axis</a> using the above procedure. Afterwards, a total score was assigned for each evaluation separatly (procedure is described (<a href="https://metabee12345.github.io/Vikmiones/Rubric/">here</a>). Next, the data was combined with various metadata-fields from <a href="https://archiveofourown.org/">AO3</a>, such as completion status, wordcount, number of hits/kudos/comments, etc. Generative AI was also used to provide content-overviews such as a plot summary, strongest and weakest aspect of the story, and Viktor Krum's role in second wizard-war. The resulting data-table can be viewed <a href="https://metabee12345.github.io/Vikmiones/Results/">here</a>.</p>
+<p>The results were further analysed using the following statistical methods:</p>
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Cronbach%27s_alpha">Cronbach's alpha</a>, which was calculated for each of the two evaluations, to measure the internal consistency of the rubric. This is common is scientific studies, see <a href="https://www.sciencedirect.com/science/article/abs/pii/S1747938X07000188">here</a> and <a href="https://nmji.in/development-of-an-analytical-rubric-and-estimation-of-its-validity-and-inter-rater-reliability-for-assessing-reflective-narrations/">here</a> for examples.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">Spearman correlation</a>, which was calculated to investigate the stability of the quality-ranking by the rubric (see <a href="https://www.sciencedirect.com/science/article/abs/pii/S1747938X07000188">this paper</a> for more background information). Both evaluations were aggregated into their own total score, providing a ranking of the stories in the dataset. These two rankings were compared to generate the Spearman correlation coefficient. As tie-breaks, the score drift was used (low drift is better, see our
+<a href="https://metabee12345.github.io/Vikmiones/Rubric/">rubric</a>).</p>
+</li>
+<li>
+<p>Mean Relative Deviation (MRD), which was calculated to investigate the stability of the absolute scores of the rubric. For the total score T of a story, we computed 2*abs(T1-T2)/(T1+T2). Then, we took the average over all 30 stories of this number, to see how much absolute scores can deviate between evaulation runs.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">Correlation study</a> between the popularity of a story and the rubric score of a story.</p>
+</li>
+</ul>
+<p>Still have to explain popularity calculation &amp; correlation methods.</p>
   </div>
 
   <script>
