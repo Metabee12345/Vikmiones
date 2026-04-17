@@ -26,10 +26,12 @@ Vikmione stories were selected from [AO3](https://archiveofourown.org/), one of 
 You can use the AO3 tag-system to search for vikmione stories [here](https://archiveofourown.org/tags/Hermione%20Granger*s*Viktor%20Krum/works). In this analysis, we did **not consider** vikmiones from another source then AO3 (because those document formats are different). We sampled the site at **date 9th of APril 2026**.
 
 We used the following criteria to reduce the set of [all vikmiones on AO3](https://archiveofourown.org/tags/Hermione%20Granger*s*Viktor%20Krum/works) to a workable scope of 'serious' stories:
+
 * Select *Harry Potter - J. K. Rowling* as the only fandom, and **exclude** cross-overs.
 * Select *Language: English* This is the largest portion of available languages, and we wish to eliminate biases in the analysis due to different languages.
 * Select *Wordcount: >=50k* The number of 50k words is fairly aribtrary, but the purpose of this filter is to distuingish one-shots and short-stories from longer ones.
 * *Exclude other Hermione relationships*: (mostly)
+
     - Hermione Granger/Draco Malfoy
     - Hermione Granger/Ron Weasley
     - Hermione Granger/Harry Potter
@@ -37,6 +39,7 @@ We used the following criteria to reduce the set of [all vikmiones on AO3](https
     - Hermione Granger/Charlie Weasley
     - Hermione Granger/Fred Weasley
     - Hermione Granger/George Weasley
+
 * Manual read of tags & Summaries
 
 # Evaluation Pipeline
