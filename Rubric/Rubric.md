@@ -386,7 +386,9 @@ As such, we calculate the total score as:
 
 *T = (1-alpha) $\times$ avg(A,B,C) + alpha $\times$ min(A,B,C,D)*
 
-We incorporate D in the min, but not the average, so that axes are not counted double. This means a forgiving judge will look past overengineering, but a strict judge will not. Next, we measure the score drift with respect to the judge as:
+We incorporate D in the min, but not the average, so that axes are not counted double. This means a forgiving judge will look past overengineering, but a strict judge will not. Note that E and F are not incorporated in the total score T at all. They just serve as proxy scores to compare T with and see if T makes sense.
+
+Next, we measure the score drift with respect to the judge as:
 
 *S = - dT/d alpha = avg(A,B,C) - min(A,B,C,D)*
 
