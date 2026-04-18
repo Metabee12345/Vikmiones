@@ -201,26 +201,9 @@
 <li>Hermione Granger/George Weasley</li>
 </ul>
 </li>
-</ul>
-<p>On the <strong>9th of April 2026</strong>, the total collection of [Hermione/Viktor stories]https://archiveofourown.org/tags/Hermione%20Granger<em>s</em>Viktor%20Krum/works) was 1716 works. The above selection steps reduced this to 122 works. See the definition of the vikmione scope above. usually, when Hermione/Viktor is combined in a story with another Hermione-pairing, the Hermione/Viktor-pairing is not endgame. This is not a hard-enforced rule, but a very strong pattern. Hence, together with the wordcount-filter (longer fics with meaningful narrative content), crossover-filter (our scope is pure Harry Potter) and</p>
-<ul>
-<li>Manual read of tags &amp; Summaries</li>
-</ul>
-<h1 id="evaluation-pipeline">Evaluation Pipeline</h1>
-<p>To apply the rubric to the Vikmione stories in our <a href="https://metabee12345.github.io/Vikmiones/Results/">dataset</a>, the following procedure was used:</p>
-<ul>
-<li>Choose a standard AI-tool and LLM for the evaluation (We used ChatGPT with GPT-5.3)</li>
-<li>Choose a standard document format for all stories, to counteract AI sensitivity to document format. For example: the AO3 PDF export.</li>
-<li>Switch off memory functions and cross-chat functions</li>
-<li>Open a fresh empty chat</li>
-<li>Load a <strong>single</strong> rubric axis into the first prompt; Terminate the model response immediately after the rubric axis has been acknowledged.</li>
-<li>Into the second prompt, load as many PDF documents as permitted by the models features (in our case the limit was 20).</li>
-<li>Add the following prompt text:</li>
-</ul>
-<p><em>Score all supplied PDFs against the above evaluation model. Briefly argue each score using the source material. Rely solely on the descriptors for calibration of the scoring scale. Do not compare between the stories at all. We want independent and non-relative scores. NB: use only the narrative body text. Do NOT use or infer information from: Tags, Author Notes, Summary, Chapter Titles, or other metadata of any kind. If such elements are present in the text, ignore them entirely.</em></p>
-<ul>
-<li>Repeat the process for all stories under consideration, and for all 10 rubric axis. NB: <strong>Use new chats every time, at least when switching rubric axis!</strong></li>
-<li>Scores for each axis were aggregated manually into a total score (see the <a href="(https://metabee12345.github.io/Vikmiones/Rubric/)">rubric</a> for the exact rules).</li>
+<li>
+<p>Scores for each axis were aggregated manually into a total score (see the <a href="(https://metabee12345.github.io/Vikmiones/Rubric/)">rubric</a> for the exact rules).</p>
+</li>
 <li>The first outcome of the LLM is final, do not supply any additional questions/context to steer the evaluation, as these biases the scoring between stories.</li>
 </ul>
 <p><strong>Irregularities:</strong></p>
@@ -233,24 +216,58 @@
 <li>Theme Quality measures reader impression, which simple fluctuates a bit more then the other axes in its evaluation. But the pipeline can be used. There is simple more fluctuation, not a systematic bias, as is the case with canon Consistency.</li>
 </ul>
 <h1 id="statistical-analysis">Statistical Analysis</h1>
-<p>All stories in the <a href="https://metabee12345.github.io/Vikmiones/Results/">dataset</a> were evaluated twice (independently) for each <a href="https://metabee12345.github.io/Vikmiones/Rubric/">rubric axis</a> using the above procedure. Afterwards, a total score was assigned for each evaluation separately (procedure is described (<a href="https://metabee12345.github.io/Vikmiones/Rubric/">here</a>). Next, the data was combined with various metadata-fields from <a href="https://archiveofourown.org/">AO3</a>, such as completion status, wordcount, number of hits/kudos/comments, etc. Generative AI was also used to provide content-overviews such as a plot summary, strongest and weakest aspect of the story, and Viktor Krum's role in second wizard-war. The resulting data-table can be viewed <a href="https://metabee12345.github.io/Vikmiones/Results/">here</a>.</p>
+<p>All stories in the <a href="https://metabee12345.github.io/Vikmiones/Results/">dataset</a> were evaluated twice (independently) for each <a href="https://metabee12345.github.io/Vikmiones/Rubric/">rubric axis</a> using the above procedure. Afterwards, a total score was assigned for each evaluation separatly (procedure is described (<a href="https://metabee12345.github.io/Vikmiones/Rubric/">here</a>). Next, the data was combined with various metadata-fields from <a href="https://archiveofourown.org/">AO3</a>, such as completion status, wordcount, number of hits/kudos/comments, etc. Generative AI was also used to provide content-overviews such as a plot summary, strongest and weakest aspect of the story, and Viktor Krum's role in second wizard-war. The resulting data-table can be viewed <a href="https://metabee12345.github.io/Vikmiones/Results/">here</a>.</p>
 <p>The results were further analysed using the following statistical methods:</p>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Cronbach%27s_alpha">Cronbach's alpha</a>, which was calculated for each of the two evaluations, to measure the internal consistency of the rubric. This is common is scientific studies, see <a href="https://www.sciencedirect.com/science/article/abs/pii/S1747938X07000188">here</a> and <a href="https://nmji.in/development-of-an-analytical-rubric-and-estimation-of-its-validity-and-inter-rater-reliability-for-assessing-reflective-narrations/">here</a> for examples.</li>
-</ul>
-<p>Note that the total score used to measure quality in the <a href="https://metabee12345.github.io/Vikmiones/Results/">dataset</a> is not the same as the direct sum of the scores of the individual rubric axes. The aggregation priocedure is explained <a href="https://metabee12345.github.io/Vikmiones/Rubric/">here</a>. However, for the calculation of the total variance in the formula for Cronbach's alpha, we did <em>not</em> use the variance of this total quality score, but the <em>variance of the direct sum of the rubric axes</em>. This is because Cronbach's alpha is solely meant for measuring the internal coherence of different tests (the rubric axes) and does not deal at all with the actual ggregation of these tests. Hence, the total variance in the formula for Cronbach's alpha is always the vbariance of a direct sum, regardless of the actual aggregation procedure stated in a rubric.</p>
-<ul>
 <li>
-<p><a href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">Spearman correlation</a>, which was calculated to investigate the stability of the quality-ranking by the rubric (see <a href="https://www.sciencedirect.com/science/article/abs/pii/S1747938X07000188">this paper</a> for more background information). Both evaluations were aggregated into their own total score, providing a ranking of the stories in the dataset. These two rankings were compared to generate the Spearman correlation coefficient. As tie-breaks, the score drift was used (a low drift is a higher rank, see our <a href="https://metabee12345.github.io/Vikmiones/Rubric/">rubric</a>). Given the ordinal nature of rubric scores, Spearman correlation is preferred over parametric alternatives.</p>
+<p><a href="https://en.wikipedia.org/wiki/Cronbach%27s_alpha">Cronbach's alpha</a>, which was calculated for each of the two evaluations, to measure the internal consistency of the rubric. This is common is scientific studies, see <a href="https://www.sciencedirect.com/science/article/abs/pii/S1747938X07000188">here</a> and <a href="https://nmji.in/development-of-an-analytical-rubric-and-estimation-of-its-validity-and-inter-rater-reliability-for-assessing-reflective-narrations/">here</a> for examples.</p>
 </li>
 <li>
-<p>Mean Relative Deviation (MRD), which was calculated to investigate the stability of the absolute total scores of the rubric. For the total score T of a story, the relative deviation between two evaulations was defined as 2*abs(T1-T2)/(T1+T2). Then, the MRD was computed as the average over all 30 stories of this number. The MRD then represents how much absolute scores fluctuate between evaluation runs.</p>
+<p><a href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">Spearman correlation</a>, which was calculated to investigate the stability of the quality-ranking by the rubric (see <a href="https://www.sciencedirect.com/science/article/abs/pii/S1747938X07000188">this paper</a> for more background information). Both evaluations were aggregated into their own total score, providing a ranking of the stories in the dataset. These two rankings were compared to generate the Spearman correlation coefficient. As tie-breaks, the score drift was used (low drift is better, see our
+<a href="https://metabee12345.github.io/Vikmiones/Rubric/">rubric</a>).</p>
+</li>
+<li>
+<p>Mean Relative Deviation (MRD), which was calculated to investigate the stability of the absolute scores of the rubric. For the total score T of a story, we computed 2*abs(T1-T2)/(T1+T2). Then, we took the average over all 30 stories of this number, to see how much absolute scores can deviate between evaulation runs.</p>
 </li>
 <li>
 <p><a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">Correlation study</a> between the popularity of a story and the rubric score of a story.</p>
 </li>
 </ul>
-<p>Still have to explain popularity calculation &amp; correlation methods.</p>
+<p>Now, Cronbach's alpha measures the internal consistency of the rubric, Spearman correlation measures relative/ordinal stability of the rubric and MRD measures absolute stability of the rubric. While this is all very viable information, it does not yet state whether the rubric indeed measures story quality. As such, the correlation between the total rubric score and the popularity was investigated for all 30 stories in our database.</p>
+<p>This brings us firtst to the question of how to measure popularity. <a href="https://archiveofourown.org/">AO3</a> tracks various types of metadata to measure this:</p>
+<ul>
+<li><strong>Hits</strong>: The total amount of times the story page is opened on the site.</li>
+<li><strong>Kudos</strong>: The total amount of times reader press the Kudos-button to show appreciation.</li>
+<li><strong>Comments</strong>: The number of times a reader gives a written response to a story.</li>
+<li><strong>Bookmarks</strong>: The number of times a reader marks the story for recommendation and/or future reference.</li>
+</ul>
+<p>We choose to base Popularity on the number of Hits. This is done, because the other data is highly sensitive to human behaviour. Readers may have read a story and appreciate it, while not contributing to Kudos, Comments, or Bookmarks. There are various explanations for this, such as not having the time to click buttons, using a device (such as a smartphone) where typimng comments is less easy, or a story can be blocked to accept kudos from guests, etc. But <strong>Hits</strong> is unbiased by human behaviour. It simply measures the amount of times a story is clicked/loaded. Note that this is still fairly different from whether a story is actually read and/or appreciated, let alone quality. But it does seem like the best metadata to use.</p>
+<p>Now, <a href="https://archiveofourown.org/">AO3</a> counts hits cumulative, meaning that it shows the total number of hits ever generated since the first part of the story was published. As such, a story that is published two years ago will like have double the hits of a story that is published one year ago. As such, we approximate popularity as Hits/Time.</p>
+<p>However, Hits/Time is not yet a very good measure of Popularity, as new stories are shown at the top of the page on <a href="https://archiveofourown.org/">AO3</a> by default. As such, many stories typically collect more hits in the beginning of their life and less when they exist longer. So Pure Hits/Time would be unfair to older stories which have actually established a large number of hits. Therefore, we asked ChatGPT to construct correction factors for this problem based on typical Harry Potter Fandom behaviour or well-known stories. In our analysis, we have used:</p>
+<ul>
+<li>&lt;1 week ago published:  Correction = 0</li>
+<li>1 week ago published:  Correction = 0.15</li>
+<li>2 weeks ago published:  Correction = 0.25</li>
+<li>3 weeks ago published:  Correction = 0.33</li>
+<li>4 weeks ago published:  Correction = 0.4</li>
+<li>2 Months ago published: Correction = 0.55</li>
+<li>3 Months ago published: Correction = 0.65</li>
+<li>5 Months ago published: Correction = 0.74</li>
+<li>6 Months ago published: Correction = 0.78</li>
+<li>1 year ago published:   Correction = 0.88</li>
+<li>2 year ago published:   Correction = 0.94</li>
+<li>3 year ago published:   Correction = 0.97</li>
+<li>4 year ago published:   Correction = 0.98</li>
+<li>5 year ago published:   Correction = 0.99</li>
+<li>
+<blockquote>
+<p>=6 year ago published: Correction = 1.00</p>
+</blockquote>
+</li>
+</ul>
+<p>As such, we define a story's <em>Popularity score</em> as: <strong>Correction*Hits/Time</strong> with Time measured in days between the first publication date of the story and 9th of April 2026 (our sampling date). This is a measure on how often the story is read, picked, chosen, etc. by people. Our suspicion is, that popularity is notibly correlation to the rubric score, but not perfect. As people choose their stories based on a combination of quality, marketing (how visible is the story on social media) and personal preferences.</p>
+<p>While the rubric aims to measure quality independent of creative choices such as plot content, characterizations, worldbuilding choices, etc; personal preferences are usually highly dependend on such choices. Therefore, we expect to find a significant but far from perfect correlation between Popularity and Rubric score, where the correlated component is the 'independent story quality' we hope to identify.</p>
+<p>The Popularity scores, as well as the rubric total scores can be found in the <a href="https://metabee12345.github.io/Vikmiones/Results/">Results</a>. All basic metadata can be found in the <a href="https://metabee12345.github.io/Vikmiones/RawData/">Raw Data</a> in See <a href="https://metabee12345.github.io/Vikmiones/Discussion/">Discussion</a> for the outcome of these calculations and its interpretation.</p>
   </div>
 
   <script>

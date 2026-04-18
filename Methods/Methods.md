@@ -68,4 +68,40 @@ The results were further analysed using the following statistical methods:
 
 * [Correlation study](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient) between the popularity of a story and the rubric score of a story.
 
-Still have to explain popularity calculation & correlation methods.
+Now, Cronbach's alpha measures the internal consistency of the rubric, Spearman correlation measures relative/ordinal stability of the rubric and MRD measures absolute stability of the rubric. While this is all very viable information, it does not yet state whether the rubric indeed measures story quality. As such, the correlation between the total rubric score and the popularity was investigated for all 30 stories in our database.
+
+This brings us firtst to the question of how to measure popularity. [AO3](https://archiveofourown.org/) tracks various types of metadata to measure this:
+
+* **Hits**: The total amount of times the story page is opened on the site.
+* **Kudos**: The total amount of times reader press the Kudos-button to show appreciation.
+* **Comments**: The number of times a reader gives a written response to a story.
+* **Bookmarks**: The number of times a reader marks the story for recommendation and/or future reference.
+
+We choose to base Popularity on the number of Hits. This is done, because the other data is highly sensitive to human behaviour. Readers may have read a story and appreciate it, while not contributing to Kudos, Comments, or Bookmarks. There are various explanations for this, such as not having the time to click buttons, using a device (such as a smartphone) where typimng comments is less easy, or a story can be blocked to accept kudos from guests, etc. But **Hits** is unbiased by human behaviour. It simply measures the amount of times a story is clicked/loaded. Note that this is still fairly different from whether a story is actually read and/or appreciated, let alone quality. But it does seem like the best metadata to use.
+
+Now, [AO3](https://archiveofourown.org/) counts hits cumulative, meaning that it shows the total number of hits ever generated since the first part of the story was published. As such, a story that is published two years ago will like have double the hits of a story that is published one year ago. As such, we approximate popularity as Hits/Time.
+
+However, Hits/Time is not yet a very good measure of Popularity, as new stories are shown at the top of the page on [AO3](https://archiveofourown.org/) by default. As such, many stories typically collect more hits in the beginning of their life and less when they exist longer. So Pure Hits/Time would be unfair to older stories which have actually established a large number of hits. Therefore, we asked ChatGPT to construct correction factors for this problem based on typical Harry Potter Fandom behaviour or well-known stories. In our analysis, we have used:
+
+- <1 week ago published:  Correction = 0
+-  1 week ago published:  Correction = 0.15
+- 2 weeks ago published:  Correction = 0.25
+- 3 weeks ago published:  Correction = 0.33
+- 4 weeks ago published:  Correction = 0.4
+- 2 Months ago published: Correction = 0.55
+- 3 Months ago published: Correction = 0.65
+- 5 Months ago published: Correction = 0.74
+- 6 Months ago published: Correction = 0.78
+- 1 year ago published:   Correction = 0.88
+- 2 year ago published:   Correction = 0.94
+- 3 year ago published:   Correction = 0.97
+- 4 year ago published:   Correction = 0.98
+- 5 year ago published:   Correction = 0.99
+- >=6 year ago published: Correction = 1.00
+
+As such, we define a story's *Popularity score* as: **Correction*Hits/Time** with Time measured in days between the first publication date of the story and 9th of April 2026 (our sampling date). This is a measure on how often the story is read, picked, chosen, etc. by people. Our suspicion is, that popularity is notibly correlation to the rubric score, but not perfect. As people choose their stories based on a combination of quality, marketing (how visible is the story on social media) and personal preferences.
+
+While the rubric aims to measure quality independent of creative choices such as plot content, characterizations, worldbuilding choices, etc; personal preferences are usually highly dependend on such choices. Therefore, we expect to find a significant but far from perfect correlation between Popularity and Rubric score, where the correlated component is the 'independent story quality' we hope to identify.
+
+The Popularity scores, as well as the rubric total scores can be found in the [Results](https://metabee12345.github.io/Vikmiones/Results/). All basic metadata can be found in the [Raw Data](https://metabee12345.github.io/Vikmiones/RawData/) in See [Discussion](https://metabee12345.github.io/Vikmiones/Discussion/) for the outcome of these calculations and its interpretation.
+
