@@ -40,7 +40,30 @@ We used the following criteria to reduce the set of [all vikmiones on AO3](https
     - Hermione Granger/Fred Weasley
     - Hermione Granger/George Weasley
 
-* Scores for each axis were aggregated manually into a total score (see the [rubric]((https://metabee12345.github.io/Vikmiones/Rubric/)) for the exact rules).
+On the **9th of April 2026**, the total collection of [Hermione/Viktor stories](https://archiveofourown.org/tags/Hermione%20Granger*s*Viktor%20Krum/works) was 1716 works. The above selection steps reduced this to 122 works. See the definition of the vikmione scope above. usually, when Hermione/Viktor is combined in a story with another Hermione-pairing, the Hermione/Viktor-pairing is not endgame. This is not a hard-enforced rule, but a very strong pattern. Hence, together with the wordcount-filter (longer fics with meaningful narrative content), crossover-filter (our scope is pure Harry Potter) and the language-filter, this is a reasonable attempt to identify the scope of the analysis.
+
+* The second selection-phase, is to manually read the tags & summaries of all stories that pass the above filter (122). This was done to verify whether a story's narrative purpose was indeed a serious vikmione (as defined above), or a story aiming at explicite content and/or romantic triangles involving Viktor Krum, or a story with a totally different scope.
+
+This reduced the datatset further from 122 stories to 30 stories. The list of these stories can be found [here](https://metabee12345.github.io/Vikmiones/Results/). **These are the stories that comprise the full dataset of our analysis.** Note that some stories in this dataset do not pass the wordcount-filter. However, they were included because it was known that they match the scope. As such, the above criteria should not be viewed as absolute or justifiable, but as a first-attempt to identify a suitable dataset on [AO3](https://archiveofourown.org/) matching our scope.
+
+Hence, if there are any other stories that you feel should be included in this analysis (because they match the above scope), you are welcome to contribute to this analysis. You can create a pull-request [here](https://github.com/Metabee12345/Vikmiones) and suggest additional stories. Provide a clear argumentation as to why the story belongs in the scope, and note that the story *must be available* on [AO3](https://archiveofourown.org/) (this is a hard-requirement), because biases from different document-formats cannot be accepted.
+
+# Evaluation Pipeline
+
+To apply the rubric to the Vikmione stories in our [dataset](https://metabee12345.github.io/Vikmiones/Results/), the following procedure was used:
+
+* Choose a standard AI-tool and LLM for the evaluation (We used ChatGPT with GPT-5.3)
+* Choose a standard document format for all stories, to counteract AI sensitivity to document format. For example: the AO3 PDF export.
+* Switch off memory functions and cross-chat functions
+* Open a fresh empty chat
+* Load a **single** rubric axis into the first prompt; Terminate the model response immediately after the rubric axis has been acknowledged.
+* Into the second prompt, load as many PDF documents as permitted by the models features (in our case the limit was 20).
+* Add the following prompt text:
+
+*Score all supplied PDFs against the above evaluation model. Briefly argue each score using the source material. Rely solely on the descriptors for calibration of the scoring scale. Do not compare between the stories at all. We want independent and non-relative scores. NB: use only the narrative body text. Do NOT use or infer information from: Tags, Author Notes, Summary, Chapter Titles, or other metadata of any kind. If such elements are present in the text, ignore them entirely.*
+
+* Repeat the process for all stories under consideration, and for all 10 rubric axis. NB: **Use new chats every time, at least when switching rubric axis!**
+* Scores for each axis were aggregated manually into a total score (see the [rubric](https://metabee12345.github.io/Vikmiones/Rubric/)) for the exact rules).
 * The first outcome of the LLM is final, do not supply any additional questions/context to steer the evaluation, as these biases the scoring between stories.
 
 **Irregularities:**
@@ -97,7 +120,7 @@ However, Hits/Time is not yet a very good measure of Popularity, as new stories 
 - 3 year ago published:   Correction = 0.97
 - 4 year ago published:   Correction = 0.98
 - 5 year ago published:   Correction = 0.99
-- >=6 year ago published: Correction = 1.00
+- 6 year ago published (or more): Correction = 1.00
 
 As such, we define a story's *Popularity score* as: **Correction*Hits/Time** with Time measured in days between the first publication date of the story and 9th of April 2026 (our sampling date). This is a measure on how often the story is read, picked, chosen, etc. by people. Our suspicion is, that popularity is notibly correlation to the rubric score, but not perfect. As people choose their stories based on a combination of quality, marketing (how visible is the story on social media) and personal preferences.
 
