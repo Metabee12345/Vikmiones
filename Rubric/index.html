@@ -506,7 +506,8 @@ Descriptors: Score the category on a scale of 0-10, with an integer number.</p>
 <p>Now, what we must do is incorporate D in the total in such a way that stories with low theme but very high A and/or low romance but very high overall C cannot slip through too easily.</p>
 <p>As such, we calculate the total score as:</p>
 <p><em>T = (1-alpha) $\times$ avg(A,B,C) + alpha $\times$ min(A,B,C,D)</em></p>
-<p>We incorporate D in the min, but not the average, so that axes are not counted double. This means a forgiving judge will look past overengineering, but a strict judge will not. Next, we measure the score drift with respect to the judge as:</p>
+<p>We incorporate D in the min, but not the average, so that axes are not counted double. This means a forgiving judge will look past overengineering, but a strict judge will not. Note that E and F are not incorporated in the total score T at all. They just serve as proxy scores to compare T with and see if T makes sense.</p>
+<p>Next, we measure the score drift with respect to the judge as:</p>
 <p><em>S = - dT/d alpha = avg(A,B,C) - min(A,B,C,D)</em></p>
 <p>A low drift then means that quality is intrinsically earned, as the average and minimum are close together. A large drift means that part of the quality comes from trade-offs between the categories and/or is bought with overengineering. Hence, Total and Drift tell you what you need to know on a story without having to understand the intrinsic properties and subtilities of the rubric.</p>
 <p>Note that this system does accept trade-offs withing categories, but less between categories. This is defendable, as the categories are not randomly chosen, but consist of thematically coherent collections of the rubric axis. As such, the system is much better defendable then arguing weight function between the different rubric axis, etc. You can defend the thematic aggregation and you accept trade-offs within a category but not between.</p>
