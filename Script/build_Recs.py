@@ -347,7 +347,7 @@ def build_full_page(table_html: str, title: str = "Summary Table", nav_current: 
   {table_html}
 
   <div class="flagtext">
-  All recommendations are based on a <strong class="smallfattext">structured quality <a href="https://metabee12345.github.io/Vikmiones/Rubric/">rubric</a></strong> with high internal consistency (Cronbach α = 0.78, Spearman correlation = 0.92, Average fluctuation = 5.7%).
+  All recommendations are based on a <strong class="smallfattext">structured quality <a href="https://metabee12345.github.io/Vikmiones/Rubric/">rubric</a></strong> with high internal consistency (α = 0.85, Spearman = 0.92, Average fluctuation = 5.5%).
   <br>
   <br>
   You can browse the full list of all analysed fics <a href="https://metabee12345.github.io/Vikmiones/Results/">here</a>, or read about the <a href="https://metabee12345.github.io/Vikmiones/Methods/">analysis method</a> and <a href="https://metabee12345.github.io/Vikmiones/Discussion/">statistical analysis</a>.
