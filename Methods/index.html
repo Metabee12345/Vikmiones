@@ -233,7 +233,24 @@
 <li>Theme Quality measures reader impression, which simple fluctuates a bit more then the other axes in its evaluation. But the pipeline can be used. There is simple more fluctuation, not a systematic bias, as is the case with canon Consistency.</li>
 </ul>
 <h1 id="statistical-analysis">Statistical Analysis</h1>
-<p>Still have to develop this.</p>
+<p>All stories in the <a href="https://metabee12345.github.io/Vikmiones/Results/">dataset</a> were evaluated twice (independently) for each <a href="https://metabee12345.github.io/Vikmiones/Rubric/">rubric axis</a> using the above procedure. Afterwards, a total score was assigned for each evaluation separately (procedure is described (<a href="https://metabee12345.github.io/Vikmiones/Rubric/">here</a>). Next, the data was combined with various metadata-fields from <a href="https://archiveofourown.org/">AO3</a>, such as completion status, wordcount, number of hits/kudos/comments, etc. Generative AI was also used to provide content-overviews such as a plot summary, strongest and weakest aspect of the story, and Viktor Krum's role in second wizard-war. The resulting data-table can be viewed <a href="https://metabee12345.github.io/Vikmiones/Results/">here</a>.</p>
+<p>The results were further analysed using the following statistical methods:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Cronbach%27s_alpha">Cronbach's alpha</a>, which was calculated for each of the two evaluations, to measure the internal consistency of the rubric. This is common is scientific studies, see <a href="https://www.sciencedirect.com/science/article/abs/pii/S1747938X07000188">here</a> and <a href="https://nmji.in/development-of-an-analytical-rubric-and-estimation-of-its-validity-and-inter-rater-reliability-for-assessing-reflective-narrations/">here</a> for examples.</li>
+</ul>
+<p>Note that the total score used to measure quality in the <a href="https://metabee12345.github.io/Vikmiones/Results/">dataset</a> is not the same as the direct sum of the scores of the individual rubric axes. The aggregation priocedure is explained <a href="https://metabee12345.github.io/Vikmiones/Rubric/">here</a>. However, for the calculation of the total variance in the formula for Cronbach's alpha, we did <em>not</em> use the variance of this total quality score, but the <em>variance of the direct sum of the rubric axes</em>. This is because Cronbach's alpha is solely meant for measuring the internal coherence of different tests (the rubric axes) and does not deal at all with the actual ggregation of these tests. Hence, the total variance in the formula for Cronbach's alpha is always the vbariance of a direct sum, regardless of the actual aggregation procedure stated in a rubric.</p>
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">Spearman correlation</a>, which was calculated to investigate the stability of the quality-ranking by the rubric (see <a href="https://www.sciencedirect.com/science/article/abs/pii/S1747938X07000188">this paper</a> for more background information). Both evaluations were aggregated into their own total score, providing a ranking of the stories in the dataset. These two rankings were compared to generate the Spearman correlation coefficient. As tie-breaks, the score drift was used (a low drift is a higher rank, see our <a href="https://metabee12345.github.io/Vikmiones/Rubric/">rubric</a>). Given the ordinal nature of rubric scores, Spearman correlation is preferred over parametric alternatives.</p>
+</li>
+<li>
+<p>Mean Relative Deviation (MRD), which was calculated to investigate the stability of the absolute total scores of the rubric. For the total score T of a story, the relative deviation between two evaulations was defined as 2*abs(T1-T2)/(T1+T2). Then, the MRD was computed as the average over all 30 stories of this number. The MRD then represents how much absolute scores fluctuate between evaluation runs.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">Correlation study</a> between the popularity of a story and the rubric score of a story.</p>
+</li>
+</ul>
+<p>Still have to explain popularity calculation &amp; correlation methods...</p>
   </div>
 
   <script>
