@@ -68,4 +68,4 @@ The results were further analysed using the following statistical methods:
 
 * [Correlation study](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient) between the popularity of a story and the rubric score of a story.
 
-Still have to explain popularity calculation & correlation methods...
+Still have to explain popularity calculation & correlation methods.
