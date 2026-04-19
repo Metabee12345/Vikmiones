@@ -48,4 +48,9 @@ The correlation between Popularity and Total rubric score was investigated, wehe
   </em>
 </p>
 
+The figure shows each story in our [dataset](https://metabee12345.github.io/Vikmiones/Results/), labeled by its title. The following 2 stories were eliminated from the correlation study (making the total number of stories in the figure 28 instead of 30):
+
+* [Flower of the North](http://archiveofourown.org/works/41745237). This story has a way higher Popularity then it's Rubric score would suggest. However, the author explicitly writes in the comments of the story, that the story was used to test idea's that would be used in another novel; a novel that has nothing to do with harry Potter. As such, it is reasonable to assume that the world and characters match that goal instead of an accurate Harry Potter Imitation. The [Raw Data](https://metabee12345.github.io/Vikmiones/RawData/) supports this hypothesis. The Canon Consistency rubric axis (score 1/10) and Worldbuilding rubric axis (score 3/10) are significantly lower then the other axis (mostly around 7/10). This makes sense, as both of these axes deal heavy penalties for canon constradictions, and they make up about 1/3 of the total rubric scores. The rubric was designed like this on purpose, as the scope of our analysis is canon-consistent serious vikmiones. However, that means that Flower of the North is probably misaligned to some extend with the scope of our analysis, causing the rubric score to turn out too low. Hence, the story does not have a bad quality, it is misaligned with our scope. As such, removal from the correlation study is justified.
+
+* [All the Names of Waiting](https://archiveofourown.org/works/70894036). This story states explicitly in its summary that Hermione and Viktor are firts torn apart by the war, and only find each other back after 12 years. The author of this story explicitly told me (the author of this analysis) that many people hate this choice in the plot.
 
