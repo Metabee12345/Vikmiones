@@ -252,6 +252,7 @@ def build_full_page(table_html: str, title: str = "Summary Table", vikmione_type
       lengthMenu: [[-1, 10, 25, 50, 100], ["All", 10, 25, 50, 100]],
       searching: true,
       ordering: true,
+      order: [[10, "desc"]],
       info: true,
       autoWidth: false,
       scrollX: true,
@@ -334,6 +335,9 @@ def main() -> None:
     df = df.rename(columns={"Execution Score": "Quality(%)"})
     df = df.rename(columns={"Popularity Score": "Popularity"})
     df = df.rename(columns={"Years since Publication": "Years"})
+
+    # Sort:
+    df = df.sort_values(by="Quality(%)", ascending=False)
 
     # Make columns filterable:
     vikmione_type_options = build_select_options(df, "Vikmione Type")

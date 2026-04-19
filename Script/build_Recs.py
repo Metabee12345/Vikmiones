@@ -32,7 +32,7 @@ def recommendation_cell(title: str, url: str) -> str:
 def build_dataframe() -> pd.DataFrame:
     rows = [
         {
-            "sort_order": 1,
+            "sort_order": 2,
             "Type": "Canon-Divergence / <br> Plot-focus",
             "Description": '<strong class="smallfattext">Hermione and Viktor meet during or slightly before GoF</strong>. <br>'+
                            "We see how events unfold when they stay together. <br>"+
@@ -48,7 +48,7 @@ def build_dataframe() -> pd.DataFrame:
                            "a true vikmione-centric canon-divergence, unlike Alignment.",
         },
         {
-            "sort_order": 2,
+            "sort_order": 1,
             "Type": "Canon-Divergence / <br> Romance-focus",
             "Description": '<strong class="smallfattext">Hermione and Viktor meet during or slightly before GoF</strong>. <br>'+
                            "We see how events unfold when they stay together. <br>"+
@@ -64,7 +64,7 @@ def build_dataframe() -> pd.DataFrame:
             "works in this category other then 'A life in Letters', which is not a longfic.",
         },
         {
-            "sort_order": 3,
+            "sort_order": 4,
             "Type": "Post-War / <br> Plot-focus",
             "Description": '<strong class="smallfattext">Hermione and Viktor reconnect after Voldemort is defeated</strong>, <br>'+
                            "usually connected to themes like trauma, safety and healing. <br>"+
@@ -79,7 +79,7 @@ def build_dataframe() -> pd.DataFrame:
                            "at a very natural point, so that it could be considered finished."
         },
         {
-            "sort_order": 4,
+            "sort_order": 3,
             "Type": "Post-War / <br> Romance-focus",
             "Description": '<strong class="smallfattext">Hermione and Viktor reconnect after Voldemort is defeated</strong>. <br>'+
                            "Effects on the larger world are present, but the main <br>"+
@@ -107,7 +107,7 @@ def build_dataframe() -> pd.DataFrame:
                            "but it's hits and popularity are way larger, hence the recommendation. It also has a notable plot beyond just romance."
         },
         {
-            "sort_order": 6,
+            "sort_order": 7,
             "Type": "Alternate Reality / <br> Plot-focus",
             "Description": '<strong class="smallfattext">Hermione and Viktor meet in a setting that is not <br>'+
                            "directly related to the canonical main HP-plot</strong>. <br>"+
@@ -121,7 +121,7 @@ def build_dataframe() -> pd.DataFrame:
                            "and setting no longer feel like the Harry Potter world. Hermione studies at beauxbatons in a heavily altered setting w.r.t. canon."
         },
         {
-            "sort_order": 7,
+            "sort_order": 6,
             "Type": "Alternate Reality / <br> Romance-focus",
             "Description": '<strong class="smallfattext">Hermione and Viktor meet in a setting that is not <br>'+
                            "directly related to the canonical main HP-plot</strong>. <br>"+
