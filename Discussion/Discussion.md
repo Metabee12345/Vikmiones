@@ -35,5 +35,17 @@ We conclude that the rubric developed for Vikmione stories measures different as
 
 # Correlation study
 
-We still have to write this.
+The correlation between Popularity and Total rubric score was investigated, wehere Popularity is defined as Correction*Hits/Time. Correction is a factor between 0 and 1, with only a substantial deviation from 1 in the first several months after publication, to correct for the effects of a launch spike. Further detials are explained in our [Methds](https://metabee12345.github.io/Vikmiones/Mwethods/). See the figure below for the correlation plot.
+
+<p style="text-align: center;">
+  <img
+    src="https://raw.githubusercontent.com/Metabee12345/Vikmiones/main/Script/Correlation.png"
+    alt="Correlation between rubric score and popularity"
+    style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 4px;"
+  ><br>
+  <em>
+    Figure: Correlation between rubric score and popularity (lifecycle*hits/time).
+  </em>
+</p>
+
 
