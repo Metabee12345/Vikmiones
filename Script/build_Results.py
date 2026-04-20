@@ -109,6 +109,17 @@ def build_full_page(table_html: str, title: str = "Summary Table", vikmione_type
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V2XC5ZD4XL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V2XC5ZD4XL');
+</script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(title)}</title>
