@@ -86,12 +86,12 @@ def build_dataframe() -> pd.DataFrame:
                            "focus is on the development of the relationship, <br>"+
                            "usually connected to themes like trauma, safety and healing.",
             "Recommendation": recommendation_cell(
-                "All the Names of Waiting - MayimOr",
-                "https://archiveofourown.org/works/70894036",
+                "Letter of Survival - Buddybee13",
+                "http://archiveofourown.org/works/56968588",
             ),
-            "Explanation": '<strong class="smallfattext">This is a truely hidden gem.</strong> By far the highest Quality score of all romance/postwar works. It covers both GoF and Hermione and <br>'+
-                            "Viktor's reunification as adults after the war. The relationship dynamics feel truely authentic like no other and Viktor growing <br>"+
-                            "up in communistic Bulgaria provides a unique angle. It is still WIP, but frequently updated."
+            "Explanation": '<strong class="smallfattext">The best combination between popularity and quality score in this category</strong>. However, the category is difficult as the better <br>'+
+                           'postwar-works usually have a stronger plot-focus. Letters of Survival is the best one is this category, but The Flower Shop - paigevlindsay is <br>'+
+                           'also a good option if you prefer less heavy themes.'
         },
         {
             "sort_order": 5,
