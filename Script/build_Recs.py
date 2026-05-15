@@ -352,7 +352,7 @@ def build_full_page(table_html: str, title: str = "Summary Table", nav_current: 
   </div>
 
   <h1 class="introduction">
-  Hermione/Viktor fanfiction recommendations, including canon-divergence, post-war, and AU longfics. This guide helps you find the best Vikmione fics with summaries, filters, and structured analysis.
+  Hermione/Viktor fanfiction recommendations, including canon-divergence, post-war, and AU longfics. This guide helps you find the best Vikmione fics with summaries, filters, and structured analysis (sampled at 9th of April 2026).
   <br>
   Click a title to open the fic, or use the <strong class="smallfattext"><a href="https://metabee12345.github.io/Vikmiones/Results/">Results</a></strong> to browse the full list of fics (filters available).
   </h1>
